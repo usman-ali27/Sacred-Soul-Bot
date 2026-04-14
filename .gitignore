@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+.mt5_credentials.json
+mt5_audit_log.jsonl
+worker_config.json
+worker_state.json
+worker_heartbeat.json
+watchdog_heartbeat.json
+alert_config.json
+alert_state.json
+test_timing*.py
+test_debug.py

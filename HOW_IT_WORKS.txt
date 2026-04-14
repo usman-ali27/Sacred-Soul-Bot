@@ -1,0 +1,268 @@
+================================================================================
+SACRED SOUL BOT - HOW IT WORKS (LIVE-FIRST ARCHITECTURE)
+================================================================================
+
+Last updated: April 15, 2026
+Focus: XAUUSD, MT5 live execution, performance-safe auto-refresh
+
+================================================================================
+1) APP OVERVIEW
+================================================================================
+
+This app is a Streamlit trading platform with 4 pages:
+
+1. Live Analysis
+2. Performance
+3. Prop Firm
+4. MT5 Auto-Trade
+
+Core design principle:
+- Heavy analytics and backtesting belong to analysis pages.
+- MT5 Auto-Trade must stay lightweight and prioritize live execution timing.
+- Production mode uses a separate background worker process for execution.
+
+================================================================================
+2) PAGE FLOW
+================================================================================
+
+A) Live Analysis
+- Fetches OHLCV by symbol and timeframe.
+- Generates strategy signals from selected ICT concepts.
+- Renders TradingView-style chart and signal table.
+- Intended for research and setup validation.
+
+B) Performance
+- Runs broad backtests across mode timeframes.
+- Computes statistics, equity curve, drawdown, R:R sweeps.
+- Intended for optimization and parameter selection.
+
+C) Prop Firm
+- Applies risk rules (drawdown and daily loss constraints).
+- Simulates account behavior and position sizing.
+- Intended for challenge/risk management validation.
+
+D) MT5 Auto-Trade (LIVE CRITICAL)
+- Connects to MT5 and streams account/position status.
+- Monitors only fresh live-window signals.
+- Executes fresh OPEN signals at live market price.
+- Ignores stale historical setups.
+- Enforces execution guardrails (max spread, max entry drift, kill-switch).
+- Enforces execution policy (max trades/day, max open positions, UTC session window).
+- Records all outcomes in a persistent audit log.
+- Provides Worker Control to run execution in execution_worker.py.
+
+================================================================================
+3) DATA AND CACHING MODEL
+================================================================================
+
+Historical data cache:
+- load_data(): cached by Streamlit with TTL tied to refresh interval.
+- Used by Live Analysis, Performance, and Prop Firm.
+
+Historical signal cache:
+- load_signals(): full signal generation on cached OHLCV.
+- Used by analysis/backtest pages and on-demand AI sizing.
+
+Live signal cache (new optimization):
+- load_live_signals(): short TTL (10s), recent bars only.
+- Uses limited rolling window instead of full history.
+- Filters to recent signal times only.
+- Used by MT5 Auto-Trade so auto-refresh remains fast.
+
+Result:
+- Auto-refresh no longer spends time recalculating full historical signal sets
+  during live execution checks.
+- Execution can run independently from Streamlit reruns via worker files.
+
+Worker runtime files:
+- worker_config.json: worker strategy + polling settings.
+- worker_state.json: executed signal keys (duplicate prevention).
+- worker_heartbeat.json: last worker status and timestamp.
+
+================================================================================
+4) MT5 AUTO-TRADE EXECUTION LOGIC (UPDATED)
+================================================================================
+
+Step 1: Connect and validate MT5 account
+- Loads credentials (optional saved config).
+- Connects and displays balance/equity/PnL/positions.
+
+Step 2: Pull live market price
+- Reads bid/ask and tick time for the configured MT5 symbol.
+
+Step 3: Build live signal window only
+- Generate signals from recent bars (not full history).
+- Keep only very recent signal timestamps.
+- Focus on status OPEN and freshness window.
+
+Step 4: Identify tradable signal
+- get_latest_fresh_open_signal() selects only fresh OPEN setup.
+- Stale signals are ignored automatically.
+
+Step 5: Execute at market
+- Manual or auto mode places market order via execute_trade().
+- SL/TP are recalculated from live price using signal distance offsets.
+- Broker minimum stop distance is enforced before order send.
+- Trade is blocked if spread/entry drift exceeds configured thresholds.
+- Kill-switch can block all new entries instantly.
+
+Step 6: Duplicate prevention
+- Each signal execution uses a unique session key.
+- Prevents repeated re-execution on every refresh cycle.
+
+Step 7: Persistent audit trail
+- FILLED, FAILED, and BLOCKED events are appended to mt5_audit_log.jsonl.
+- MT5 page shows both current session log and persistent recent history.
+
+Step 8: Policy engine checks
+- Max trades/day: blocks new entries after daily FILLED limit.
+- Max open positions: blocks entries when symbol position cap is reached.
+- Session window (optional): blocks entries outside allowed UTC hours.
+
+Step 9: Background worker mode
+- Save worker config from MT5 page (symbol/timeframe/concepts/rr/lookback/lot).
+- Start worker process from terminal:
+  .venv\Scripts\python.exe execution_worker.py
+- Worker polls live window signals and executes only fresh OPEN signals.
+- In-app auto-trade is disabled when worker mode is enabled (anti-duplicate).
+
+Step 10: Worker operations and monitoring
+- Quick start script: start_worker.ps1
+- Quick stop script: stop_worker.ps1
+- Worker heartbeat staleness alert appears in MT5 page.
+- Execution Ops section shows 24h Filled/Failed/Blocked and fill rate.
+
+Step 11: Watchdog auto-restart
+- Quick start script: start_watchdog.ps1
+- Quick stop script: stop_watchdog.ps1
+- Watchdog monitors worker_heartbeat.json and restarts worker on stale/error state.
+- Watchdog status appears in MT5 page from watchdog_heartbeat.json.
+
+Step 12: Policy profiles
+- Conservative: tighter spread/drift and lower trade caps.
+- Balanced: default production profile.
+- Aggressive: wider spread/drift and higher trade caps.
+- Apply Profile button updates execution guardrails and policy instantly.
+
+Step 13: Webhook alerting
+- Configure alerting from MT5 page (enable, webhook URL, cooldown, alert types).
+- Worker sends alerts for connect errors, exceptions, and trade failures.
+- Watchdog sends alerts when it triggers a worker restart.
+- Test alert button validates webhook integration.
+
+Step 14: Auto-start on reboot (Windows)
+- Install scheduled tasks: install_scheduled_tasks.ps1
+- Remove scheduled tasks: uninstall_scheduled_tasks.ps1
+- Tasks created:
+  - SacredSoulBot-ExecutionWorker
+  - SacredSoulBot-WorkerWatchdog
+
+================================================================================
+5) WHY EXECUTION IS NOW MORE RELIABLE
+================================================================================
+
+Previous risk:
+- Every refresh triggered heavy backtest-style calculations.
+- Execution checks could be delayed under load.
+
+Current behavior:
+- MT5 page uses a live-only monitor path.
+- Historical analytics are separated from execution path.
+- AI lot sizing is on-demand, not auto-run each refresh.
+- Hard guardrails block bad conditions before order_send.
+- Persistent audit improves traceability and support/debug workflows.
+
+Outcome:
+- Faster refresh cycles for live trading.
+- Lower chance of missing timely MT5 executions.
+
+================================================================================
+6) DEFAULT STRATEGY SETTINGS
+================================================================================
+
+Scalping
+- Timeframe default: 5m
+- Lot default: 0.02
+- Balance default: 10,000
+- R:R default: 1.5
+- Sweep lookback: 10
+- Concepts: Liquidity Sweep, FVG, Order Flow
+
+Intraday
+- Timeframe default: 1h
+- Lot default: 0.04
+- Balance default: 10,000
+- R:R default: 2.0
+- Sweep lookback: 20
+- Concepts: Liquidity Sweep, MSS, OB, FVG
+
+Swing
+- Timeframe default: 4h
+- Lot default: 0.02
+- Balance default: 10,000
+- R:R default: 3.0
+- Sweep lookback: 30
+
+================================================================================
+7) PROFESSIONALIZATION ROADMAP (FOR SELLING TO COMPANIES)
+================================================================================
+
+To make this enterprise-ready, implement these upgrades:
+
+A) Architecture and reliability
+- Split into services: UI, strategy engine, execution engine, risk engine.
+- Move live execution to a worker process (not Streamlit request cycle).
+- Add queue-based event handling (Redis/RabbitMQ/Kafka).
+- Add heartbeat and watchdog for MT5 connectivity.
+
+B) Compliance and auditability
+- Immutable execution audit log (signal -> decision -> order -> fill).
+- Full parameter/version snapshot per trade.
+- Role-based access controls and user actions log.
+- Data retention policies and exportable compliance reports.
+
+C) Risk governance
+- Account-level and strategy-level hard risk limits.
+- Session kill-switch, max trades/day, max concurrent positions.
+- Slippage/spread guardrails before sending orders.
+- Circuit breakers for volatility spikes and broker anomalies.
+
+D) Monitoring and ops
+- Centralized logging and metrics (latency, error rate, fill quality).
+- Alerting (Slack/Teams/Email) on failed executions and disconnects.
+- Health dashboards for market data and broker bridge.
+- Automated recovery runbooks.
+- Worker watchdog auto-restart and stale-heartbeat supervision.
+- Configurable webhook alerts and one-click test notification.
+
+E) Product quality
+- Integration tests with MT5 simulation/staging account.
+- Deterministic backtest test suite and regression baselines.
+- CI/CD with quality gates and release notes.
+- Versioned strategy packages and rollback support.
+
+F) Security
+- Replace local credential storage with encrypted secrets manager.
+- Encrypt data at rest and in transit.
+- Principle of least privilege for all services.
+- Secure software supply chain and dependency scanning.
+
+G) Commercial packaging
+- Multi-tenant architecture for B2B customers.
+- Plan tiers (signals-only, semi-auto, full-auto, enterprise).
+- SLA-backed support and onboarding playbooks.
+- White-label branding and broker integration connectors.
+
+================================================================================
+8) SHORT ACTION PLAN (NEXT BUILD STEPS)
+================================================================================
+
+1. Introduce broker staging mode and automated integration tests.
+2. Implement secure credential vault and per-user RBAC.
+3. Add execution latency metrics and rejection reason breakdown charts.
+4. Add configurable alert routing templates (Slack/Telegram/Teams payload formats).
+5. Add signed installer + environment bootstrap for enterprise rollout.
+
+================================================================================
+END
+================================================================================
