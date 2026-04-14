@@ -1,5 +1,5 @@
 """
-Sacred Soul Bot — XAUUSD Focused Dashboard
+Sacred Soul — XAUUSD Focused Dashboard
 
 Features:
   - TradingView-style charts with ICT overlays
@@ -17,6 +17,7 @@ import json
 import time
 from datetime import datetime, timezone
 from pathlib import Path
+from urllib.parse import quote
 
 import streamlit as st
 import pandas as pd
@@ -67,7 +68,7 @@ from mt5_trader import (
 _APP_BASE_DIR = Path(__file__).parent
 _LOGO_PATH = _APP_BASE_DIR / "assets" / "sacred-soul-logo.svg"
 st.set_page_config(
-    page_title="Sacred Soul Bot — XAUUSD",
+    page_title="Sacred Soul — XAUUSD",
     page_icon=str(_LOGO_PATH) if _LOGO_PATH.exists() else "📊",
     layout="wide",
 )
@@ -76,8 +77,21 @@ st.set_page_config(
 # Sidebar
 # ===================================================================
 if _LOGO_PATH.exists():
-    st.sidebar.image(str(_LOGO_PATH), use_container_width=True)
-st.sidebar.title("Sacred Soul Bot")
+    try:
+        _logo_svg = _LOGO_PATH.read_text(encoding="utf-8")
+        _logo_uri = f"data:image/svg+xml;utf8,{quote(_logo_svg)}"
+        st.sidebar.markdown(
+            (
+                "<div style='display:flex;justify-content:center;margin-bottom:8px;'>"
+                f"<img src='{_logo_uri}' width='150' height='150' "
+                "style='width:150px;height:150px;object-fit:contain;'/>"
+                "</div>"
+            ),
+            unsafe_allow_html=True,
+        )
+    except Exception:
+        st.sidebar.image(str(_LOGO_PATH), width=150)
+st.sidebar.title("Sacred Soul")
 st.sidebar.caption("XAUUSD Focused")
 
 page = st.sidebar.radio(
@@ -1228,7 +1242,7 @@ elif page == "MT5 Auto-Trade":
             ok = send_webhook_alert(
                 event="manual_test",
                 severity="info",
-                message="Sacred Soul Bot test alert from MT5 page.",
+                message="Sacred Soul test alert from MT5 page.",
                 metadata={"source": "streamlit_mt5_page"},
             )
             if ok:
