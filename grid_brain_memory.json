@@ -1,0 +1,28 @@
+{
+  "regime_stats": {
+    "XAUUSD|TRENDING": {
+      "symbol": "XAUUSD",
+      "regime": "TRENDING",
+      "total_trades": 3,
+      "wins": 3,
+      "losses": 0,
+      "avg_profit_usd": 3211.6517,
+      "avg_profit_pips": 9.77,
+      "learned_spacing_mult": 1.0,
+      "spacing_ema": 1.0,
+      "direction_accuracy": 50.0,
+      "best_session": "London",
+      "learned_tp_mult": 1.5,
+      "learned_sl_mult": 2.5,
+      "learned_max_open_levels": 6,
+      "learned_buy_ratio": 0.5,
+      "updated_at": "2026-04-16 12:20:36 UTC"
+    }
+  },
+  "global_trades": 3,
+  "global_wins": 3,
+  "global_losses": 0,
+  "global_avg_profit": 3211.6517,
+  "last_trained_at": "2026-04-16 12:20:36 UTC",
+  "version": 1
+}

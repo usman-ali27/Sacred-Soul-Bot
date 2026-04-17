@@ -18,7 +18,7 @@ import pandas as pd
 
 from alerting import load_alert_config, send_webhook_alert
 from data_fetcher import fetch_ohlcv
-from mt5_trader import MT5Config, connect_mt5, execute_trade, load_credentials
+from mt5_trader import MT5Config, connect_mt5, execute_trade, load_credentials, is_mt5_alive, ensure_mt5_connected
 from trade_generator import generate_signals
 
 BASE_DIR = Path(__file__).parent
@@ -48,6 +48,8 @@ def load_worker_config() -> dict:
         "rr": 1.5,
         "sweep_lookback": 10,
         "lot_size": 0.02,
+        "min_quality_score": 68.0,
+        "max_signal_age_bars": 2.0,
         "poll_seconds": 5,
         "bars_window": 500,
     }
@@ -101,13 +103,72 @@ def build_live_signals(cfg: dict):
         return live_df, None
 
     now_ts = live_df.index.max()
-    fresh_age = _tf_to_minutes(cfg["timeframe"]) * 2
-    fresh = sigs[(sigs["status"] == "OPEN") & (sigs["signal_time"] >= now_ts - pd.Timedelta(minutes=fresh_age))]
+    tf_min = _tf_to_minutes(cfg["timeframe"])
+    max_age_bars = float(cfg.get("max_signal_age_bars", 2.0))
+    min_quality = float(cfg.get("min_quality_score", 68.0))
+
+    open_sigs = sigs[sigs["status"] == "OPEN"].copy()
+    if open_sigs.empty:
+        return live_df, None
+
+    open_sigs["age_min"] = open_sigs["signal_time"].apply(
+        lambda t: max((now_ts - t).total_seconds() / 60.0, 0.0)
+    )
+    open_sigs["age_bars"] = open_sigs["age_min"] / max(tf_min, 1)
+    open_sigs = open_sigs[open_sigs["age_bars"] <= max_age_bars]
+    if open_sigs.empty:
+        return live_df, None
+
+    open_sigs["quality_score"] = open_sigs.apply(
+        lambda r: signal_quality_score(r, cfg["timeframe"], now_ts),
+        axis=1,
+    )
+    fresh = open_sigs[open_sigs["quality_score"] >= min_quality]
     if fresh.empty:
         return live_df, None
 
     latest = fresh.sort_values("signal_time", ascending=False).iloc[0]
     return live_df, latest
+
+
+def _concept_count(concepts_used: str) -> int:
+    if not concepts_used:
+        return 0
+    if isinstance(concepts_used, str):
+        parts = [p.strip() for p in concepts_used.replace("|", ",").split(",") if p.strip()]
+        return len(parts)
+    return 0
+
+
+def signal_quality_score(sig: pd.Series, tf: str, reference_ts: pd.Timestamp) -> float:
+    tf_min = _tf_to_minutes(tf)
+    rr = float(sig.get("rr_ratio", 1.5))
+    concepts = _concept_count(str(sig.get("concepts_used", "")))
+    entry = float(sig.get("entry", 0.0))
+    sl = float(sig.get("sl", entry))
+    risk_pts = abs(entry - sl)
+
+    try:
+        age_min = max((reference_ts - sig["signal_time"]).total_seconds() / 60.0, 0.0)
+    except Exception:
+        age_min = tf_min * 2
+    age_bars = age_min / max(tf_min, 1)
+
+    score = 45.0
+    score += min(concepts * 8.0, 24.0)
+    score += min(rr * 8.0, 20.0)
+    score += max(0.0, 20.0 - (age_bars * 6.0))
+
+    if risk_pts < 2.0:
+        score -= 12.0
+    elif risk_pts < 4.0:
+        score -= 6.0
+    elif 6.0 <= risk_pts <= 40.0:
+        score += 8.0
+    elif risk_pts > 90.0:
+        score -= 10.0
+
+    return round(max(0.0, min(score, 100.0)), 1)
 
 
 def build_mt5_config_from_credentials(creds: dict) -> MT5Config:
@@ -169,6 +230,23 @@ def main() -> None:
                     )
                 time.sleep(poll_seconds)
                 continue
+
+        # ── Health-check: detect stale MT5 connection ────────
+        if connected and not is_mt5_alive():
+            recon_ok, recon_msg = ensure_mt5_connected(mt5_cfg)
+            if not recon_ok:
+                connected = False
+                write_heartbeat({"status": "error", "detail": f"MT5 disconnected: {recon_msg}"})
+                if alert_cfg.get("notify_on_worker_error", True):
+                    send_webhook_alert(
+                        event="worker_mt5_disconnect",
+                        severity="error",
+                        message=f"MT5 connection lost and reconnect failed: {recon_msg}",
+                    )
+                time.sleep(poll_seconds)
+                continue
+            else:
+                write_heartbeat({"status": "reconnected", "detail": "MT5 reconnected successfully"})
 
         try:
             _, latest_sig = build_live_signals(cfg)

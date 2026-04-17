@@ -2,19 +2,20 @@
 SACRED SOUL BOT - HOW IT WORKS (LIVE-FIRST ARCHITECTURE)
 ================================================================================
 
-Last updated: April 15, 2026
-Focus: XAUUSD, MT5 live execution, performance-safe auto-refresh
+Last updated: April 16, 2026
+Focus: XAUUSD, MT5 live execution, performance-safe auto-refresh, AI grid trading
 
 ================================================================================
 1) APP OVERVIEW
 ================================================================================
 
-This app is a Streamlit trading platform with 4 pages:
+This app is a Streamlit trading platform with 5 pages:
 
 1. Live Analysis
 2. Performance
 3. Prop Firm
 4. MT5 Auto-Trade
+5. Grid Trading
 
 Core design principle:
 - Heavy analytics and backtesting belong to analysis pages.
@@ -48,8 +49,57 @@ D) MT5 Auto-Trade (LIVE CRITICAL)
 - Ignores stale historical setups.
 - Enforces execution guardrails (max spread, max entry drift, kill-switch).
 - Enforces execution policy (max trades/day, max open positions, UTC session window).
+- Enforces signal quality gate (min quality score + max signal age in bars).
 - Records all outcomes in a persistent audit log.
 - Provides Worker Control to run execution in execution_worker.py.
+- Includes a dry-run LONG execution test to validate broker path without placing an order.
+
+E) Grid Trading (NEW)
+- AI analyzes market direction using ICT signals + EMA(20/50) + ATR regime.
+- Builds a grid of small-lot BUY and SELL levels around current price.
+- AI direction bias (BULLISH / BEARISH / NEUTRAL) skews grid level allocation.
+- Dynamic regime behavior:
+  * Sideways (RANGING): tighter spacing and denser symmetric grid.
+  * Trending (TRENDING): wider spacing and stronger directional skew.
+  * Volatile (VOLATILE): widest spacing, fewer levels, reduced lot pressure.
+- Lot scaling: slightly larger toward bias, smaller on counter-direction levels.
+- ATR-based dynamic spacing; Brain auto-tunes spacing multiplier over time.
+- GridBrain learns from every closed trade (grid_audit_log.jsonl).
+- Brain tracks: spacing, TP/SL, max open levels, directional edge by regime.
+- Self-learning activates after 5+ trades per symbol/regime bucket.
+- Grid state is persisted to grid_state.json across restarts.
+- Manual level close and kill-switch (Deactivate Grid) for risk control.
+- Hard risk guards: max daily loss, max peak drawdown %, optional minimum equity.
+- Auto profile switch by regime: RANGING / TRENDING / VOLATILE parameter sets.
+- Basket manager closes all OPEN grid levels at basket TP/SL thresholds.
+- Trailing Basket TP: once basket PnL exceeds TP, keeps position open while
+  PnL rises.  Places a trailing stop at (peak_pnl - trailing_step_usd).
+  Closes only when PnL drops below the trail floor — locking in more profit.
+- Session-aware grid pause: optionally pauses new fills during low-liquidity
+  sessions (e.g., Asian) while continuing to monitor existing positions.
+- Grid P&L Equity Curve: cumulative equity chart from closed levels in audit log.
+- Built-in grid backtest includes spread/slippage and monthly walk-forward summary.
+- Execution mode safety: Dry-run default, live order mode requires explicit user confirmation.
+- Backtest results can be exported as CSV (summary, equity curve, monthly walk-forward).
+- Account safety presets (2k/5k/10k) auto-apply conservative lot and risk limits.
+- Portfolio-wide caps can block fills by total open positions and total lots.
+- Daily audit report export supports UTC date filtering and CSV download.
+- Dynamic Plan Preview panel shows computed buy/sell counts, effective spacing,
+  lot pressure, and regime parameters BEFORE grid activation.
+- Hard lockout: risk guard breach persists a lockout to disk (lockout_active,
+  lockout_reason, lockout_time) — survives restarts, requires manual unlock
+  with a reason that is logged to the audit trail.
+
+Performance optimizations:
+- Brain retraining moved from every page load to on-demand button only.
+- Duplicate regime analysis removed — single EMA/ATR computation per refresh.
+- MT5 Ops summaries throttled: all aggregations skipped on fast-cycle refreshes.
+- Chart ICT detectors guarded by show_* toggles (only run when enabled).
+- Grid data fetching cached with TTL=30s to avoid redundant API calls.
+
+Cloud runtime note:
+- Streamlit Community Cloud is Linux, so direct MT5 terminal execution is not supported there.
+- Cloud app is for dashboard/monitoring; live MT5 execution must run on Windows (local/VPS).
 
 ================================================================================
 3) DATA AND CACHING MODEL
@@ -96,15 +146,23 @@ Step 3: Build live signal window only
 - Focus on status OPEN and freshness window.
 
 Step 4: Identify tradable signal
-- get_latest_fresh_open_signal() selects only fresh OPEN setup.
-- Stale signals are ignored automatically.
+- Signals are ranked by quality score.
+- Quality gate enforces minimum score and maximum age (bars).
+- Best eligible OPEN signal is selected for execution.
 
 Step 5: Execute at market
 - Manual or auto mode places market order via execute_trade().
+- Dry-run test uses preview_trade_execution() to validate order path without placing a live order.
 - SL/TP are recalculated from live price using signal distance offsets.
 - Broker minimum stop distance is enforced before order send.
 - Trade is blocked if spread/entry drift exceeds configured thresholds.
 - Kill-switch can block all new entries instantly.
+- Pre-trade SL distance validation (new guardrails):
+  * Rejected if SL distance is inside the spread (negative or zero net distance).
+  * Rejected if SL is tighter than min_stop_distance_pips (default: 2 pips).
+  * Rejected if SL is wider than max_stop_distance_pips (default: 200 pips).
+  * Rejected if TP/SL ratio is below min_rr_ratio (default: 1.5).
+  * All thresholds are configurable from the Execution Guardrails panel.
 
 Step 6: Duplicate prevention
 - Each signal execution uses a unique session key.
@@ -123,14 +181,33 @@ Step 9: Background worker mode
 - Save worker config from MT5 page (symbol/timeframe/concepts/rr/lookback/lot).
 - Start worker process from terminal:
   .venv\Scripts\python.exe execution_worker.py
+- MT5 page now has a persistent Execution Profile (style/symbol/timeframe/concepts/RR/lookback).
+- Execution Profile values stay fixed across auto-refresh and page reruns until manually changed.
 - Worker polls live window signals and executes only fresh OPEN signals.
-- In-app auto-trade is disabled when worker mode is enabled (anti-duplicate).
+- Worker uses quality gate defaults: min_quality_score=68 and max_signal_age_bars=2.0.
+- In-app auto-trade is locked when worker mode is enabled and heartbeat is healthy (anti-duplicate).
+- If worker mode is enabled but heartbeat is stale/missing/error, in-app auto-trade can be used as fallback.
 
 Step 10: Worker operations and monitoring
 - Quick start script: start_worker.ps1
 - Quick stop script: stop_worker.ps1
 - Worker heartbeat staleness alert appears in MT5 page.
+- MT5 page supports dedicated real-time refresh cadence (1s/2s/3s/5s/10s/30s) independent of global app refresh.
+- Fast cadence improves PnL/order visibility and quicker fresh-signal reaction, with higher CPU/network cost.
+- Optional Lean MT5 UI mode auto-optimizes ultra-fast cadence by hiding heavy tables/charts.
+- Lean mode prioritizes live prices, open-trade metrics, scanner status, and execution actions.
+- Live Signal Monitor now shows a Digital Scanner status loader each cycle.
+- Scanner displays phase/cycle progress while refreshing live-window signal checks.
+- Scanner includes a digital stream tape and live status chips (phase, symbol, timeframe).
+- Market Condition Analysis panel summarizes regime, directional bias, conviction, structure state, execution risk, and spread.
+- Market Condition Analysis also classifies market phase (Trend/Pullback/Chop) from recent signal sequence.
+- Spread risk badge now shows spread-limit utilization percent with color-coded severity.
+- Regime score sparkline tracks the last 10 scan cycles for quick momentum context.
 - Execution Ops section shows 24h Filled/Failed/Blocked and fill rate.
+- Execution Ops includes broker response KPIs (Avg ms and P95 ms).
+- Execution Ops shows hourly status trend chart for FILLED/FAILED/BLOCKED behavior.
+- Last Execution Attempt panel shows latest status/symbol/direction/time and reason text.
+- Rejection Reason Breakdown table summarizes top FAILED/BLOCKED causes in last 24h.
 
 Step 11: Watchdog auto-restart
 - Quick start script: start_watchdog.ps1
@@ -156,6 +233,11 @@ Step 14: Auto-start on reboot (Windows)
 - Tasks created:
   - SacredSoulBot-ExecutionWorker
   - SacredSoulBot-WorkerWatchdog
+
+Step 15: Live validation status (implemented)
+- Dry-run execution path validated (preview mode).
+- Real sim-account manual execution validated (open + immediate close).
+- Worker runtime validated (heartbeat + monitoring + audit updates).
 
 ================================================================================
 5) WHY EXECUTION IS NOW MORE RELIABLE
@@ -207,6 +289,57 @@ Swing
 7) PROFESSIONALIZATION ROADMAP (FOR SELLING TO COMPANIES)
 ================================================================================
 
+================================================================================
+8) GRID V2 RISK + LEARNING FLOW
+================================================================================
+
+Step G1: Regime detection and profile selection
+- AI classifies current market as RANGING, TRENDING, or VOLATILE.
+- If Auto Regime Profile is enabled, grid settings are switched automatically:
+  * Range profile: tighter spacing, more open levels.
+  * Trend profile: wider spacing, fewer open levels.
+  * Volatility profile: widest spacing, strict open-level cap.
+
+Step G2: Brain-assisted parameter tuning
+- Brain recommendations are loaded by symbol + regime bucket.
+- If sufficient trade samples exist, recommended values are applied:
+  * spacing multiplier
+  * TP multiplier
+  * SL multiplier
+  * max open levels
+
+Step G3: Hard risk guard checks (every refresh cycle)
+- Pulls balance/equity from MT5 account.
+- Blocks and auto-deactivates grid when any condition is breached:
+  * daily loss >= max_daily_loss_usd
+  * drawdown from peak equity >= max_drawdown_pct
+  * equity <= min_equity_usd (if configured)
+
+Step G4: Basket-level control
+- Computes floating basket PnL across all OPEN levels.
+- If basket PnL reaches configured threshold:
+  * basket_take_profit_usd => close all open levels
+  * basket_stop_loss_usd => close all open levels
+
+Step G5: Learning data capture
+- Closed level events append rich context fields to grid_audit_log.jsonl:
+  * symbol, regime, direction, lot, spacing_used
+  * TP/SL multipliers, max_open_levels, timeframe, profile_name
+- GridBrain retrains from audit log and updates memory file.
+
+Step G6: Backtest and walk-forward validation
+- Grid backtest uses OHLC simulation with spread + slippage haircut.
+- Includes periodic rebalance to refresh regime/profile.
+- Outputs:
+  * summary metrics (trades, win rate, net PnL, max DD)
+  * equity curve
+  * monthly walk-forward table
+
+Grid runtime files:
+- grid_state.json: active grid levels + risk tracking state.
+- grid_audit_log.jsonl: closed-trade events for analytics/learning.
+- grid_brain_memory.json: learned recommendations per symbol/regime.
+
 To make this enterprise-ready, implement these upgrades:
 
 A) Architecture and reliability
@@ -234,6 +367,7 @@ D) Monitoring and ops
 - Automated recovery runbooks.
 - Worker watchdog auto-restart and stale-heartbeat supervision.
 - Configurable webhook alerts and one-click test notification.
+- Built-in MT5 ops dashboard now reports broker response latency and hourly status trend.
 
 E) Product quality
 - Integration tests with MT5 simulation/staging account.
