@@ -156,33 +156,15 @@ def generate_signals(
     required_concepts: list[str],
     rr_ratio: float = 2.0,
     sweep_lookback: int = 20,
+    ict_data: dict[str, pd.DataFrame] | None = None,
 ) -> pd.DataFrame:
-    """Generate ICT trade signals honouring only the user-selected concepts.
-
-    For each bar the logic is:
-      1. Check if a liquidity sweep occurred in the last *sweep_lookback* bars
-         to establish directional bias (bullish / bearish).
-      2. For that direction verify that every concept in *required_concepts*
-         is confirmed.
-      3. If all pass → create entry signal.
-
-    If "Liquidity Sweep" is *not* in required_concepts the generator still
-    uses sweep detection to determine bias (direction), but does not require
-    it as a filter.
-
-    Args:
-        df:                 OHLCV DataFrame.
-        required_concepts:  User-selected list of concept names.
-        rr_ratio:           Risk-reward ratio.
-        sweep_lookback:     How many bars back to search for sweeps.
-
-    Returns:
-        DataFrame of trade signals.
-    """
+    """Generate ICT trade signals honouring only the user-selected concepts."""
     if df.empty or len(df) < 30:
         return _empty_signals()
 
-    ict = compute_all(df)
+    if ict_data is None:
+        ict_data = compute_all(df)
+    ict = ict_data
     sweeps = ict["Liquidity Sweep"]
     n = len(df)
     signals: list[dict] = []
@@ -274,58 +256,98 @@ def generate_signals(
 
 
 def _backtest_signals(sig_df: pd.DataFrame, df: pd.DataFrame) -> pd.DataFrame:
-    """Walk-forward resolution: WIN / LOSS / BE / OPEN."""
+    """Vectorized walk-forward resolution: WIN / LOSS / BE / OPEN."""
+    if sig_df.empty:
+        return sig_df
+
+    h = df["High"].values
+    l = df["Low"].values
+    t = df.index.values
+    
+    # Map timestamps to integer indices for fast slicing
+    t_idx = {val: i for i, val in enumerate(t)}
+    
     statuses, results, pnls = [], [], []
 
     for _, sig in sig_df.iterrows():
-        entry_time = sig["signal_time"]
+        entry_idx = t_idx.get(sig["signal_time"])
+        if entry_idx is None or entry_idx >= len(h) - 1:
+            statuses.append("OPEN"); results.append(None); pnls.append(0.0)
+            continue
+
         direction = sig["direction"]
         entry = sig["entry"]
         sl = sig["sl"]
         tp = sig["tp"]
         risk = sig["risk"]
-
-        future = df.loc[entry_time:]
-        if len(future) <= 1:
-            statuses.append("OPEN"); results.append(None); pnls.append(0.0)
-            continue
-
-        status, result, pnl = "OPEN", None, 0.0
-        be_active = False
-
-        for _, candle in future.iloc[1:].iterrows():
-            high, low = candle["High"], candle["Low"]
-
-            if direction == "LONG":
-                if not be_active and high >= entry + risk:
-                    be_active = True
-                    sl = entry
-                if low <= sl:
-                    status = "CLOSED"
-                    result = "BE" if be_active else "LOSS"
-                    pnl = sl - entry
-                    break
-                if high >= tp:
-                    status, result = "CLOSED", "WIN"
-                    pnl = tp - entry
-                    break
+        
+        # Future window
+        fh = h[entry_idx + 1:]
+        fl = l[entry_idx + 1:]
+        
+        if direction == "LONG":
+            # 1. Find when BE triggers (High >= Entry + Risk)
+            be_triggers = np.where(fh >= entry + risk)[0]
+            be_i = be_triggers[0] if len(be_triggers) > 0 else len(fh)
+            
+            # 2. Check for exit BEFORE BE triggers
+            # (Note: we check up to be_i because the candle that triggers BE might also trigger SL/TP)
+            pre_be_sl = np.where(fl[:be_i + 1] <= sl)[0]
+            pre_be_tp = np.where(fh[:be_i + 1] >= tp)[0]
+            
+            first_sl = pre_be_sl[0] if len(pre_be_sl) > 0 else 9999999
+            first_tp = pre_be_tp[0] if len(pre_be_tp) > 0 else 9999999
+            
+            if first_sl < first_tp and first_sl <= be_i:
+                statuses.append("CLOSED"); results.append("LOSS"); pnls.append(round(sl - entry, 5))
+            elif first_tp < first_sl and first_tp <= be_i:
+                statuses.append("CLOSED"); results.append("WIN"); pnls.append(round(tp - entry, 5))
+            elif be_i < len(fh):
+                # BE triggered, now SL is entry
+                post_be_sl = np.where(fl[be_i + 1:] <= entry)[0]
+                post_be_tp = np.where(fh[be_i + 1:] >= tp)[0]
+                
+                f_sl = post_be_sl[0] if len(post_be_sl) > 0 else 9999999
+                f_tp = post_be_tp[0] if len(post_be_tp) > 0 else 9999999
+                
+                if f_sl < f_tp:
+                    statuses.append("CLOSED"); results.append("BE"); pnls.append(0.0)
+                elif f_tp < f_sl:
+                    statuses.append("CLOSED"); results.append("WIN"); pnls.append(round(tp - entry, 5))
+                else:
+                    statuses.append("OPEN"); results.append(None); pnls.append(0.0)
             else:
-                if not be_active and low <= entry - risk:
-                    be_active = True
-                    sl = entry
-                if high >= sl:
-                    status = "CLOSED"
-                    result = "BE" if be_active else "LOSS"
-                    pnl = entry - sl
-                    break
-                if low <= tp:
-                    status, result = "CLOSED", "WIN"
-                    pnl = entry - tp
-                    break
-
-        statuses.append(status)
-        results.append(result)
-        pnls.append(round(pnl, 5))
+                statuses.append("OPEN"); results.append(None); pnls.append(0.0)
+                
+        else: # SHORT
+            be_triggers = np.where(fl <= entry - risk)[0]
+            be_i = be_triggers[0] if len(be_triggers) > 0 else len(fh)
+            
+            pre_be_sl = np.where(fh[:be_i + 1] >= sl)[0]
+            pre_be_tp = np.where(fl[:be_i + 1] <= tp)[0]
+            
+            first_sl = pre_be_sl[0] if len(pre_be_sl) > 0 else 9999999
+            first_tp = pre_be_tp[0] if len(pre_be_tp) > 0 else 9999999
+            
+            if first_sl < first_tp and first_sl <= be_i:
+                statuses.append("CLOSED"); results.append("LOSS"); pnls.append(round(entry - sl, 5))
+            elif first_tp < first_sl and first_tp <= be_i:
+                statuses.append("CLOSED"); results.append("WIN"); pnls.append(round(entry - tp, 5))
+            elif be_i < len(fh):
+                post_be_sl = np.where(fh[be_i + 1:] >= entry)[0]
+                post_be_tp = np.where(fl[be_i + 1:] <= tp)[0]
+                
+                f_sl = post_be_sl[0] if len(post_be_sl) > 0 else 9999999
+                f_tp = post_be_tp[0] if len(post_be_tp) > 0 else 9999999
+                
+                if f_sl < f_tp:
+                    statuses.append("CLOSED"); results.append("BE"); pnls.append(0.0)
+                elif f_tp < f_sl:
+                    statuses.append("CLOSED"); results.append("WIN"); pnls.append(round(entry - tp, 5))
+                else:
+                    statuses.append("OPEN"); results.append(None); pnls.append(0.0)
+            else:
+                statuses.append("OPEN"); results.append(None); pnls.append(0.0)
 
     sig_df["status"] = statuses
     sig_df["result"] = results

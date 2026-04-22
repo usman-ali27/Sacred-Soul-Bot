@@ -63,37 +63,37 @@ def previous_day_high_low(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def detect_fvg(df: pd.DataFrame) -> pd.DataFrame:
-    """Three-candle Fair Value Gaps.
-
-    Bullish FVG: candle[i].Low > candle[i-2].High
-    Bearish FVG: candle[i].High < candle[i-2].Low
-
-    Returns: [fvg_type, fvg_top, fvg_bottom, fvg_ce]
-    """
-    h = df["High"].values
-    lo = df["Low"].values
-    n = len(df)
-    ft = [None] * n
-    top = [np.nan] * n
-    bot = [np.nan] * n
-    ce = [np.nan] * n
-
-    for i in range(2, n):
-        if lo[i] > h[i - 2]:
-            ft[i] = "bullish"
-            top[i] = lo[i]
-            bot[i] = h[i - 2]
-            ce[i] = (lo[i] + h[i - 2]) / 2.0
-        elif h[i] < lo[i - 2]:
-            ft[i] = "bearish"
-            top[i] = lo[i - 2]
-            bot[i] = h[i]
-            ce[i] = (lo[i - 2] + h[i]) / 2.0
-
-    return pd.DataFrame(
-        {"fvg_type": ft, "fvg_top": top, "fvg_bottom": bot, "fvg_ce": ce},
-        index=df.index,
-    ).astype({"fvg_top": float, "fvg_bottom": float, "fvg_ce": float})
+    """Vectorized three-candle Fair Value Gaps."""
+    h = df["High"]
+    lo = df["Low"]
+    
+    # Shift to get previous candles
+    h2 = h.shift(2)
+    lo2 = lo.shift(2)
+    
+    bull_mask = (lo > h2)
+    bear_mask = (h < lo2)
+    
+    fvg_type = pd.Series(None, index=df.index, dtype=object)
+    fvg_type.loc[bull_mask] = "bullish"
+    fvg_type.loc[bear_mask] = "bearish"
+    
+    fvg_top = pd.Series(np.nan, index=df.index)
+    fvg_top.loc[bull_mask] = lo
+    fvg_top.loc[bear_mask] = lo2
+    
+    fvg_bottom = pd.Series(np.nan, index=df.index)
+    fvg_bottom.loc[bull_mask] = h2
+    fvg_bottom.loc[bear_mask] = h
+    
+    fvg_ce = (fvg_top + fvg_bottom) / 2.0
+    
+    return pd.DataFrame({
+        "fvg_type": fvg_type,
+        "fvg_top": fvg_top,
+        "fvg_bottom": fvg_bottom,
+        "fvg_ce": fvg_ce
+    }, index=df.index).astype({"fvg_top": float, "fvg_bottom": float, "fvg_ce": float})
 
 
 # ===================================================================
@@ -102,45 +102,42 @@ def detect_fvg(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def detect_mss(df: pd.DataFrame, order: int = 5) -> pd.DataFrame:
-    """Break of prior swing high/low with displacement.
-
-    Returns: [mss_type, mss_level]
+    """Vectorized Market Structure Shift detection.
+    
+    Uses forward-filled swing highs/lows to detect breaks with displacement.
     """
-    sh = swing_highs(df, order).values
-    sl = swing_lows(df, order).values
-    h = df["High"].values
-    lo = df["Low"].values
-    c = df["Close"].values
-    o = df["Open"].values
-    n = len(df)
-
-    mt = [None] * n
-    ml = [np.nan] * n
-    last_sh = np.nan
-    last_sl = np.nan
-
-    for i in range(1, n):
-        if sh[i]:
-            last_sh = h[i]
-        if sl[i]:
-            last_sl = lo[i]
-        if np.isnan(last_sh) or np.isnan(last_sl):
-            continue
-        body = abs(c[i] - o[i])
-        rng = h[i] - lo[i]
-        disp = rng > 0 and (body / rng) > 0.5
-        if c[i] > last_sh and disp:
-            mt[i] = "bullish"
-            ml[i] = last_sh
-            last_sh = h[i]
-        elif c[i] < last_sl and disp:
-            mt[i] = "bearish"
-            ml[i] = last_sl
-            last_sl = lo[i]
-
-    return pd.DataFrame(
-        {"mss_type": mt, "mss_level": ml}, index=df.index
-    ).astype({"mss_level": float})
+    sh = swing_highs(df, order)
+    sl = swing_lows(df, order)
+    
+    # Forward fill last swing levels
+    last_sh = df["High"].where(sh).ffill().shift(1)
+    last_sl = df["Low"].where(sl).ffill().shift(1)
+    
+    close = df["Close"]
+    open_ = df["Open"]
+    high = df["High"]
+    low = df["Low"]
+    
+    # Displacement logic
+    body = (close - open_).abs()
+    rng = high - low
+    disp = (rng > 0) & ((body / rng) > 0.5)
+    
+    bull_mss = (close > last_sh) & disp & last_sh.notna()
+    bear_mss = (close < last_sl) & disp & last_sl.notna()
+    
+    mss_type = pd.Series(None, index=df.index, dtype=object)
+    mss_type.loc[bull_mss] = "bullish"
+    mss_type.loc[bear_mss] = "bearish"
+    
+    mss_level = pd.Series(np.nan, index=df.index)
+    mss_level.loc[bull_mss] = last_sh
+    mss_level.loc[bear_mss] = last_sl
+    
+    return pd.DataFrame({
+        "mss_type": mss_type,
+        "mss_level": mss_level
+    }, index=df.index).astype({"mss_level": float})
 
 
 # ===================================================================
@@ -189,47 +186,56 @@ def detect_po3(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def detect_ob(df: pd.DataFrame, disp_mult: float = 1.5) -> pd.DataFrame:
-    """Order Block: the last candle before a strong displacement move.
-
-    Bullish OB = last bearish candle before a bullish displacement.
-    Bearish OB = last bullish candle before a bearish displacement.
-    Displacement = body > disp_mult × ATR(14).
-
-    Returns: [ob_type, ob_top, ob_bottom]
+    """Vectorized Order Block detection.
+    
+    OB is the candle *before* a strong displacement move.
     """
-    h = df["High"].values
-    lo = df["Low"].values
-    o = df["Open"].values
-    c = df["Close"].values
-    n = len(df)
-    atr = pd.Series(h - lo, index=df.index).rolling(14).mean().values
-
-    ot = [None] * n
-    otop = [np.nan] * n
-    obot = [np.nan] * n
-
-    for i in range(1, n):
-        if np.isnan(atr[i]) or atr[i] == 0:
-            continue
-        body_i = abs(c[i] - o[i])
-        if body_i <= disp_mult * atr[i]:
-            continue
-        bull_disp = c[i] > o[i]
-        bear_disp = c[i] < o[i]
-        prev_bear = c[i - 1] < o[i - 1]
-        prev_bull = c[i - 1] > o[i - 1]
-        if bull_disp and prev_bear:
-            ot[i - 1] = "bullish"
-            otop[i - 1] = max(o[i - 1], c[i - 1])
-            obot[i - 1] = min(o[i - 1], c[i - 1])
-        elif bear_disp and prev_bull:
-            ot[i - 1] = "bearish"
-            otop[i - 1] = max(o[i - 1], c[i - 1])
-            obot[i - 1] = min(o[i - 1], c[i - 1])
-
-    return pd.DataFrame(
-        {"ob_type": ot, "ob_top": otop, "ob_bottom": obot}, index=df.index
-    ).astype({"ob_top": float, "ob_bottom": float})
+    h = df["High"]
+    lo = df["Low"]
+    o = df["Open"]
+    c = df["Close"]
+    
+    atr = (h - lo).rolling(14).mean()
+    body = (c - o).abs()
+    
+    # Displacement mask
+    disp = body > (disp_mult * atr)
+    bull_disp = (c > o) & disp
+    bear_disp = (c < o) & disp
+    
+    # Check previous candle
+    prev_c = c.shift(1)
+    prev_o = o.shift(1)
+    prev_bear = (prev_c < prev_o)
+    prev_bull = (prev_c > prev_o)
+    
+    # Bullish OB: prev candle was bear, current is bull displacement
+    bull_ob_mask = bull_disp & prev_bear
+    # Bearish OB: prev candle was bull, current is bear displacement
+    bear_ob_mask = bear_disp & prev_bull
+    
+    ob_type = pd.Series(None, index=df.index, dtype=object)
+    ob_type.loc[bull_ob_mask.shift(-1).fillna(False)] = "bullish"
+    ob_type.loc[bear_ob_mask.shift(-1).fillna(False)] = "bearish"
+    
+    ob_top = pd.Series(np.nan, index=df.index)
+    ob_bottom = pd.Series(np.nan, index=df.index)
+    
+    # The OB is the candle BEFORE the displacement, so we mark index i if i+1 is displacement
+    # Wait, the original code marks index i-1. So if i has displacement, i-1 is OB.
+    # My shift(-1) does exactly that.
+    
+    ob_top_vals = pd.concat([o, c], axis=1).max(axis=1)
+    ob_bot_vals = pd.concat([o, c], axis=1).min(axis=1)
+    
+    ob_top.loc[ob_type.notna()] = ob_top_vals
+    ob_bottom.loc[ob_type.notna()] = ob_bot_vals
+    
+    return pd.DataFrame({
+        "ob_type": ob_type,
+        "ob_top": ob_top,
+        "ob_bottom": ob_bottom
+    }, index=df.index).astype({"ob_top": float, "ob_bottom": float})
 
 
 # ===================================================================
@@ -259,33 +265,27 @@ def detect_ote(df: pd.DataFrame, order: int = 10) -> pd.DataFrame:
     last_sh_i = -1
     last_sl_i = -1
 
-    for i in range(n):
-        if sh.iloc[i]:
-            last_sh_val = h[i]
-            last_sh_i = i
-        if sl.iloc[i]:
-            last_sl_val = lo[i]
-            last_sl_i = i
-        if np.isnan(last_sh_val) or np.isnan(last_sl_val):
-            continue
-        rng = last_sh_val - last_sl_val
-        if rng <= 0:
-            continue
-
-        if last_sl_i < last_sh_i:  # upswing → bullish OTE
-            f62 = last_sh_val - 0.618 * rng
-            f79 = last_sh_val - 0.786 * rng
-            if lo[i] <= f62 and lo[i] >= f79:
-                otype[i] = "bullish"
-                otop[i] = f62
-                obot[i] = f79
-        elif last_sh_i < last_sl_i:  # downswing → bearish OTE
-            f62 = last_sl_val + 0.618 * rng
-            f79 = last_sl_val + 0.786 * rng
-            if h[i] >= f62 and h[i] <= f79:
-                otype[i] = "bearish"
-                otop[i] = f79
-                obot[i] = f62
+    lsh_val = df["High"].where(sh).ffill()
+    lsl_val = df["Low"].where(sl).ffill()
+    sh_idx = pd.Series(np.arange(len(df)), index=df.index).where(sh).ffill()
+    sl_idx = pd.Series(np.arange(len(df)), index=df.index).where(sl).ffill()
+    rng = lsh_val - lsl_val
+    valid = (rng > 0)
+    
+    bull_mask = (sl_idx < sh_idx) & (df["Low"] <= lsh_val - 0.618*rng) & (df["Low"] >= lsh_val - 0.786*rng) & valid
+    bear_mask = (sh_idx < sl_idx) & (df["High"] >= lsl_val + 0.618*rng) & (df["High"] <= lsl_val + 0.786*rng) & valid
+    
+    otype = pd.Series(None, index=df.index, dtype=object)
+    otype.loc[bull_mask] = "bullish"
+    otype.loc[bear_mask] = "bearish"
+    
+    otop = pd.Series(np.nan, index=df.index)
+    otop.loc[bull_mask] = lsh_val - 0.618*rng
+    otop.loc[bear_mask] = lsl_val + 0.786*rng
+    
+    obot = pd.Series(np.nan, index=df.index)
+    obot.loc[bull_mask] = lsh_val - 0.786*rng
+    obot.loc[bear_mask] = lsl_val + 0.618*rng
 
     return pd.DataFrame(
         {"ote_type": otype, "ote_top": otop, "ote_bottom": obot}, index=df.index
