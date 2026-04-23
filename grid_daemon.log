@@ -1,0 +1,1324 @@
+2026-04-22 13:32:36,192 [INFO] Grid Daemon starting...
+2026-04-22 13:32:36,233 [INFO] Connected to MT5.
+2026-04-22 13:32:36,244 [ERROR] Loop error: '<=' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 59, in main
+    if price <= 0:
+TypeError: '<=' not supported between instances of 'dict' and 'int'
+2026-04-22 13:32:38,256 [ERROR] Loop error: '<=' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 59, in main
+    if price <= 0:
+TypeError: '<=' not supported between instances of 'dict' and 'int'
+2026-04-22 13:32:40,272 [ERROR] Loop error: '<=' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 59, in main
+    if price <= 0:
+TypeError: '<=' not supported between instances of 'dict' and 'int'
+2026-04-22 13:32:42,289 [ERROR] Loop error: '<=' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 59, in main
+    if price <= 0:
+TypeError: '<=' not supported between instances of 'dict' and 'int'
+2026-04-22 13:32:44,304 [ERROR] Loop error: '<=' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 59, in main
+    if price <= 0:
+TypeError: '<=' not supported between instances of 'dict' and 'int'
+2026-04-22 13:32:46,318 [ERROR] Loop error: '<=' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 59, in main
+    if price <= 0:
+TypeError: '<=' not supported between instances of 'dict' and 'int'
+2026-04-22 13:32:48,353 [ERROR] Loop error: '<=' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 59, in main
+    if price <= 0:
+TypeError: '<=' not supported between instances of 'dict' and 'int'
+2026-04-22 13:32:50,368 [ERROR] Loop error: '<=' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 59, in main
+    if not price_data or "bid" not in price_data:
+TypeError: '<=' not supported between instances of 'dict' and 'int'
+2026-04-22 13:32:52,376 [ERROR] Loop error: '<=' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 59, in main
+    if not price_data or "bid" not in price_data:
+TypeError: '<=' not supported between instances of 'dict' and 'int'
+2026-04-22 13:32:54,382 [ERROR] Loop error: '<=' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 59, in main
+    if not price_data or "bid" not in price_data:
+TypeError: '<=' not supported between instances of 'dict' and 'int'
+2026-04-22 13:32:56,386 [ERROR] Loop error: '<=' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 59, in main
+    if not price_data or "bid" not in price_data:
+TypeError: '<=' not supported between instances of 'dict' and 'int'
+2026-04-22 13:32:58,389 [ERROR] Loop error: '<=' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 59, in main
+    if not price_data or "bid" not in price_data:
+TypeError: '<=' not supported between instances of 'dict' and 'int'
+2026-04-22 13:33:00,391 [ERROR] Loop error: '<=' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 59, in main
+    if not price_data or "bid" not in price_data:
+TypeError: '<=' not supported between instances of 'dict' and 'int'
+2026-04-22 13:33:02,398 [ERROR] Loop error: '<=' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 59, in main
+    if not price_data or "bid" not in price_data:
+TypeError: '<=' not supported between instances of 'dict' and 'int'
+2026-04-22 13:33:04,409 [ERROR] Loop error: '<=' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 59, in main
+    if not price_data or "bid" not in price_data:
+TypeError: '<=' not supported between instances of 'dict' and 'int'
+2026-04-22 13:33:06,423 [ERROR] Loop error: '<=' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 59, in main
+    if not price_data or "bid" not in price_data:
+TypeError: '<=' not supported between instances of 'dict' and 'int'
+2026-04-22 13:33:08,438 [ERROR] Loop error: '<=' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 59, in main
+    if not price_data or "bid" not in price_data:
+TypeError: '<=' not supported between instances of 'dict' and 'int'
+2026-04-22 13:33:10,441 [ERROR] Loop error: '<=' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 59, in main
+    if not price_data or "bid" not in price_data:
+TypeError: '<=' not supported between instances of 'dict' and 'int'
+2026-04-22 13:33:12,445 [ERROR] Loop error: '<=' not supported between instances of 'dict' and 'int'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 59, in main
+    if not price_data or "bid" not in price_data:
+TypeError: '<=' not supported between instances of 'dict' and 'int'
+2026-04-22 13:33:13,413 [INFO] Grid Daemon starting...
+2026-04-22 13:33:13,444 [INFO] Connected to MT5.
+2026-04-22 13:33:13,444 [INFO] Triggered level: BUY_3 at 4753.42
+2026-04-22 13:33:13,446 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.success:
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:15,452 [INFO] Triggered level: BUY_3 at 4753.13
+2026-04-22 13:33:15,452 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.success:
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:17,466 [INFO] Triggered level: BUY_3 at 4753.2
+2026-04-22 13:33:17,467 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.success:
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:19,483 [INFO] Triggered level: BUY_3 at 4753.39
+2026-04-22 13:33:19,483 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.success:
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:21,501 [INFO] Triggered level: BUY_3 at 4753.48
+2026-04-22 13:33:21,502 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.success:
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:23,511 [INFO] Triggered level: BUY_3 at 4753.65
+2026-04-22 13:33:23,513 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.success:
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:25,521 [INFO] Triggered level: BUY_3 at 4753.81
+2026-04-22 13:33:25,521 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.success:
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:27,525 [INFO] Triggered level: BUY_3 at 4753.74
+2026-04-22 13:33:27,525 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.success:
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:29,527 [INFO] Triggered level: BUY_3 at 4753.35
+2026-04-22 13:33:29,527 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.success:
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:31,544 [INFO] Triggered level: BUY_3 at 4753.7
+2026-04-22 13:33:31,544 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.success:
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:33,559 [INFO] Triggered level: BUY_3 at 4753.81
+2026-04-22 13:33:33,561 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.get("success"):
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:35,567 [INFO] Triggered level: BUY_3 at 4753.73
+2026-04-22 13:33:35,567 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.get("success"):
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:37,573 [INFO] Triggered level: BUY_3 at 4753.3
+2026-04-22 13:33:37,573 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.get("success"):
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:39,577 [INFO] Triggered level: BUY_3 at 4753.28
+2026-04-22 13:33:39,577 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.get("success"):
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:41,587 [INFO] Triggered level: BUY_3 at 4753.31
+2026-04-22 13:33:41,588 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.get("success"):
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:43,594 [INFO] Triggered level: BUY_3 at 4753.19
+2026-04-22 13:33:43,594 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.get("success"):
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:45,601 [INFO] Triggered level: BUY_3 at 4753.19
+2026-04-22 13:33:45,601 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.get("success"):
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:47,610 [INFO] Triggered level: BUY_3 at 4753.18
+2026-04-22 13:33:47,610 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.get("success"):
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:49,615 [INFO] Triggered level: BUY_3 at 4752.86
+2026-04-22 13:33:49,616 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.get("success"):
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:51,631 [INFO] Triggered level: BUY_3 at 4752.88
+2026-04-22 13:33:51,631 [ERROR] Loop error: 'dict' object has no attribute 'success'
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 80, in main
+    if res.get("success"):
+AttributeError: 'dict' object has no attribute 'success'
+2026-04-22 13:33:52,245 [INFO] Grid Daemon starting...
+2026-04-22 13:33:52,273 [INFO] Connected to MT5.
+2026-04-22 13:33:52,273 [INFO] Triggered level: BUY_3 at 4752.85
+2026-04-22 13:33:52,273 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:33:52,273 [INFO] Triggered level: BUY_2 at 4752.85
+2026-04-22 13:33:52,273 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:33:52,273 [INFO] Triggered level: BUY_1 at 4752.85
+2026-04-22 13:33:52,273 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:33:54,281 [INFO] Triggered level: BUY_3 at 4752.97
+2026-04-22 13:33:54,281 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:33:54,281 [INFO] Triggered level: BUY_2 at 4752.97
+2026-04-22 13:33:54,281 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:33:54,281 [INFO] Triggered level: BUY_1 at 4752.97
+2026-04-22 13:33:54,283 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:33:56,297 [INFO] Triggered level: BUY_3 at 4753.11
+2026-04-22 13:33:56,297 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:33:56,297 [INFO] Triggered level: BUY_2 at 4753.11
+2026-04-22 13:33:56,297 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:33:56,297 [INFO] Triggered level: BUY_1 at 4753.11
+2026-04-22 13:33:56,297 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:33:58,311 [INFO] Triggered level: BUY_3 at 4753.01
+2026-04-22 13:33:58,311 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:33:58,311 [INFO] Triggered level: BUY_2 at 4753.01
+2026-04-22 13:33:58,318 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:33:58,318 [INFO] Triggered level: BUY_1 at 4753.01
+2026-04-22 13:33:58,318 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:00,327 [INFO] Triggered level: BUY_3 at 4753.1
+2026-04-22 13:34:00,328 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:00,328 [INFO] Triggered level: BUY_2 at 4753.1
+2026-04-22 13:34:00,328 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:00,328 [INFO] Triggered level: BUY_1 at 4753.1
+2026-04-22 13:34:00,329 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:02,331 [INFO] Triggered level: BUY_3 at 4753.01
+2026-04-22 13:34:02,331 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:02,331 [INFO] Triggered level: BUY_2 at 4753.01
+2026-04-22 13:34:02,331 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:02,331 [INFO] Triggered level: BUY_1 at 4753.01
+2026-04-22 13:34:02,331 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:04,336 [INFO] Triggered level: BUY_3 at 4752.84
+2026-04-22 13:34:04,336 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:04,336 [INFO] Triggered level: BUY_2 at 4752.84
+2026-04-22 13:34:04,336 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:04,338 [INFO] Triggered level: BUY_1 at 4752.84
+2026-04-22 13:34:04,338 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:06,351 [INFO] Triggered level: BUY_3 at 4752.69
+2026-04-22 13:34:06,351 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:06,354 [INFO] Triggered level: BUY_2 at 4752.69
+2026-04-22 13:34:06,354 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:06,355 [INFO] Triggered level: BUY_1 at 4752.69
+2026-04-22 13:34:06,355 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:08,371 [INFO] Triggered level: BUY_3 at 4752.63
+2026-04-22 13:34:08,371 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:08,371 [INFO] Triggered level: BUY_2 at 4752.63
+2026-04-22 13:34:08,371 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:08,371 [INFO] Triggered level: BUY_1 at 4752.63
+2026-04-22 13:34:08,371 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:10,388 [INFO] Triggered level: BUY_3 at 4752.64
+2026-04-22 13:34:10,388 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:10,390 [INFO] Triggered level: BUY_2 at 4752.64
+2026-04-22 13:34:10,390 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:10,390 [INFO] Triggered level: BUY_1 at 4752.64
+2026-04-22 13:34:10,397 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:12,402 [INFO] Triggered level: BUY_3 at 4752.74
+2026-04-22 13:34:12,404 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:12,404 [INFO] Triggered level: BUY_2 at 4752.74
+2026-04-22 13:34:12,404 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:12,407 [INFO] Triggered level: BUY_1 at 4752.74
+2026-04-22 13:34:12,407 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:14,426 [INFO] Triggered level: BUY_3 at 4752.57
+2026-04-22 13:34:14,426 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:14,426 [INFO] Triggered level: BUY_2 at 4752.57
+2026-04-22 13:34:14,426 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:14,426 [INFO] Triggered level: BUY_1 at 4752.57
+2026-04-22 13:34:14,426 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:16,440 [INFO] Triggered level: BUY_3 at 4752.49
+2026-04-22 13:34:16,440 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:16,441 [INFO] Triggered level: BUY_2 at 4752.49
+2026-04-22 13:34:16,441 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:16,441 [INFO] Triggered level: BUY_1 at 4752.49
+2026-04-22 13:34:16,441 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:18,454 [INFO] Triggered level: BUY_3 at 4752.62
+2026-04-22 13:34:18,457 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:18,457 [INFO] Triggered level: BUY_2 at 4752.62
+2026-04-22 13:34:18,457 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:18,457 [INFO] Triggered level: BUY_1 at 4752.62
+2026-04-22 13:34:18,457 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:20,465 [INFO] Triggered level: BUY_3 at 4752.38
+2026-04-22 13:34:20,466 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:20,466 [INFO] Triggered level: BUY_2 at 4752.38
+2026-04-22 13:34:20,466 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:20,466 [INFO] Triggered level: BUY_1 at 4752.38
+2026-04-22 13:34:20,467 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:22,480 [INFO] Triggered level: BUY_3 at 4752.7
+2026-04-22 13:34:22,481 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:22,481 [INFO] Triggered level: BUY_2 at 4752.7
+2026-04-22 13:34:22,481 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:22,481 [INFO] Triggered level: BUY_1 at 4752.7
+2026-04-22 13:34:22,481 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:24,484 [INFO] Triggered level: BUY_3 at 4752.64
+2026-04-22 13:34:24,484 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:24,484 [INFO] Triggered level: BUY_2 at 4752.64
+2026-04-22 13:34:24,488 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:24,488 [INFO] Triggered level: BUY_1 at 4752.64
+2026-04-22 13:34:24,489 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:26,498 [INFO] Triggered level: BUY_3 at 4752.72
+2026-04-22 13:34:26,501 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:26,501 [INFO] Triggered level: BUY_2 at 4752.72
+2026-04-22 13:34:26,502 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:26,502 [INFO] Triggered level: BUY_1 at 4752.72
+2026-04-22 13:34:26,504 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:28,507 [INFO] Triggered level: BUY_3 at 4752.52
+2026-04-22 13:34:28,507 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:28,507 [INFO] Triggered level: BUY_2 at 4752.52
+2026-04-22 13:34:28,507 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:28,507 [INFO] Triggered level: BUY_1 at 4752.52
+2026-04-22 13:34:28,507 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:30,517 [INFO] Triggered level: BUY_3 at 4752.4
+2026-04-22 13:34:30,518 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:30,518 [INFO] Triggered level: BUY_2 at 4752.4
+2026-04-22 13:34:30,518 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:30,518 [INFO] Triggered level: BUY_1 at 4752.4
+2026-04-22 13:34:30,518 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:32,522 [INFO] Triggered level: BUY_3 at 4752.66
+2026-04-22 13:34:32,522 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:32,522 [INFO] Triggered level: BUY_2 at 4752.66
+2026-04-22 13:34:32,523 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:32,523 [INFO] Triggered level: BUY_1 at 4752.66
+2026-04-22 13:34:32,523 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:34,527 [INFO] Triggered level: BUY_3 at 4752.74
+2026-04-22 13:34:34,527 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:34,527 [INFO] Triggered level: BUY_2 at 4752.74
+2026-04-22 13:34:34,527 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:34,529 [INFO] Triggered level: BUY_1 at 4752.74
+2026-04-22 13:34:34,529 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:36,545 [INFO] Triggered level: BUY_3 at 4752.71
+2026-04-22 13:34:36,545 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:36,546 [INFO] Triggered level: BUY_2 at 4752.71
+2026-04-22 13:34:36,546 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:36,546 [INFO] Triggered level: BUY_1 at 4752.71
+2026-04-22 13:34:36,546 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:38,553 [INFO] Triggered level: BUY_3 at 4752.77
+2026-04-22 13:34:38,554 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:38,554 [INFO] Triggered level: BUY_2 at 4752.77
+2026-04-22 13:34:38,554 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:38,554 [INFO] Triggered level: BUY_1 at 4752.77
+2026-04-22 13:34:38,554 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:40,557 [INFO] Triggered level: BUY_3 at 4752.71
+2026-04-22 13:34:40,561 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:40,577 [INFO] Triggered level: BUY_2 at 4752.71
+2026-04-22 13:34:40,577 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:40,577 [INFO] Triggered level: BUY_1 at 4752.71
+2026-04-22 13:34:40,577 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:42,582 [INFO] Triggered level: BUY_3 at 4752.6
+2026-04-22 13:34:42,582 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:42,583 [INFO] Triggered level: BUY_2 at 4752.6
+2026-04-22 13:34:42,583 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:42,583 [INFO] Triggered level: BUY_1 at 4752.6
+2026-04-22 13:34:42,583 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:44,594 [INFO] Triggered level: BUY_3 at 4752.55
+2026-04-22 13:34:44,594 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:44,597 [INFO] Triggered level: BUY_2 at 4752.55
+2026-04-22 13:34:44,597 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:44,597 [INFO] Triggered level: BUY_1 at 4752.55
+2026-04-22 13:34:44,597 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:46,613 [INFO] Triggered level: BUY_3 at 4752.64
+2026-04-22 13:34:46,613 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:46,613 [INFO] Triggered level: BUY_2 at 4752.64
+2026-04-22 13:34:46,615 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:46,615 [INFO] Triggered level: BUY_1 at 4752.64
+2026-04-22 13:34:46,616 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:48,633 [INFO] Triggered level: BUY_3 at 4752.64
+2026-04-22 13:34:48,634 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:48,635 [INFO] Triggered level: BUY_2 at 4752.64
+2026-04-22 13:34:48,635 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:48,636 [INFO] Triggered level: BUY_1 at 4752.64
+2026-04-22 13:34:48,636 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:50,647 [INFO] Triggered level: BUY_3 at 4752.53
+2026-04-22 13:34:50,647 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:50,649 [INFO] Triggered level: BUY_2 at 4752.53
+2026-04-22 13:34:50,649 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:50,649 [INFO] Triggered level: BUY_1 at 4752.53
+2026-04-22 13:34:50,649 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:52,667 [INFO] Triggered level: BUY_3 at 4752.57
+2026-04-22 13:34:52,667 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:52,671 [INFO] Triggered level: BUY_2 at 4752.57
+2026-04-22 13:34:52,671 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:52,671 [INFO] Triggered level: BUY_1 at 4752.57
+2026-04-22 13:34:52,671 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:54,677 [INFO] Triggered level: BUY_3 at 4752.57
+2026-04-22 13:34:54,677 [ERROR] Failed to fill BUY_3: No tick data
+2026-04-22 13:34:54,681 [INFO] Triggered level: BUY_2 at 4752.57
+2026-04-22 13:34:54,681 [ERROR] Failed to fill BUY_2: No tick data
+2026-04-22 13:34:54,681 [INFO] Triggered level: BUY_1 at 4752.57
+2026-04-22 13:34:54,681 [ERROR] Failed to fill BUY_1: No tick data
+2026-04-22 13:34:56,652 [INFO] Grid Daemon starting...
+2026-04-22 13:34:56,690 [INFO] Connected to MT5.
+2026-04-22 13:34:56,693 [INFO] Triggered level: BUY_3 at 4752.62
+2026-04-22 13:34:57,009 [INFO] Order filled: BUY_3 | Ticket: 431595083
+2026-04-22 13:34:57,012 [INFO] Triggered level: BUY_2 at 4752.62
+2026-04-22 13:34:57,307 [INFO] Order filled: BUY_2 | Ticket: 431595089
+2026-04-22 13:34:57,312 [INFO] Triggered level: BUY_1 at 4752.62
+2026-04-22 13:34:57,609 [INFO] Order filled: BUY_1 | Ticket: 431595101
+2026-04-22 13:42:49,754 [INFO] Grid Daemon starting...
+2026-04-22 13:42:49,796 [INFO] Connected to MT5.
+2026-04-22 13:54:45,638 [INFO] Grid Daemon starting...
+2026-04-22 13:54:45,674 [INFO] Connected to MT5.
+2026-04-22 13:54:45,676 [INFO] Detected manual close for BUY_3 (Ticket: 431595083)
+2026-04-22 13:54:45,677 [INFO] Detected manual close for BUY_2 (Ticket: 431595089)
+2026-04-22 13:54:45,677 [INFO] Detected manual close for BUY_1 (Ticket: 431595101)
+2026-04-22 14:28:53,140 [INFO] Grid Daemon starting...
+2026-04-22 14:28:53,170 [INFO] Connected to MT5.
+2026-04-22 14:32:06,202 [INFO] Grid Daemon starting...
+2026-04-22 14:32:06,249 [INFO] Connected to MT5.
+2026-04-22 14:33:45,741 [INFO] Grid Daemon starting...
+2026-04-22 14:33:45,825 [INFO] Connected to MT5.
+2026-04-22 14:35:58,052 [INFO] Grid Daemon starting...
+2026-04-22 14:35:58,165 [INFO] Connected to MT5.
+2026-04-22 14:36:38,183 [INFO] Grid Daemon starting...
+2026-04-22 14:36:38,239 [INFO] Connected to MT5.
+2026-04-22 14:38:45,313 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 14:38:48,397 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 6.97
+2026-04-22 14:40:57,904 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 14:41:00,957 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 6.42
+2026-04-22 14:41:38,029 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 14:41:41,166 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 6.45
+2026-04-22 14:43:50,238 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 14:43:51,963 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 6.46
+2026-04-22 14:46:02,811 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 14:46:05,779 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 6.46
+2026-04-22 14:46:43,067 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 14:48:53,765 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 14:48:55,557 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 6.49
+2026-04-22 14:51:07,302 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 14:51:09,230 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 6.88
+2026-04-22 14:51:47,265 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 14:51:47,284 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 14:51:47,299 [ERROR] 
+1 Failed download:
+2026-04-22 14:51:47,300 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 14:53:57,148 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 14:53:59,055 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 6.93
+2026-04-22 14:56:10,859 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 14:56:13,044 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 6.59
+2026-04-22 14:56:49,043 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 14:56:50,811 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 6.59
+2026-04-22 14:59:00,447 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 14:59:02,403 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 6.59
+2026-04-22 15:01:14,643 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:01:16,543 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 6.59
+2026-04-22 15:01:52,264 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:01:54,047 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 6.59
+2026-04-22 15:04:03,859 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:04:06,007 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 6.80
+2026-04-22 15:06:18,002 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:06:19,715 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 6.90
+2026-04-22 15:06:55,510 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:06:57,340 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 6.90
+2026-04-22 15:09:07,409 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:09:09,076 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 6.90
+2026-04-22 15:11:12,692 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 15:11:15,678 [INFO] MT5 reconnected successfully
+2026-04-22 15:12:01,869 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:12:03,557 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.20
+2026-04-22 15:14:30,344 [INFO] Grid Daemon starting...
+2026-04-22 15:14:30,656 [INFO] Connected to MT5.
+2026-04-22 15:17:05,294 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:17:07,152 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.42
+2026-04-22 15:19:30,527 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:19:33,526 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.48
+2026-04-22 15:22:08,789 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:22:10,538 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.50
+2026-04-22 15:24:35,110 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:24:36,870 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.61
+2026-04-22 15:27:12,040 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:27:13,926 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.57
+2026-04-22 15:29:38,609 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:29:40,449 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.72
+2026-04-22 15:31:54,661 [INFO] Grid Daemon starting...
+2026-04-22 15:31:54,776 [INFO] Connected to MT5.
+2026-04-22 15:32:33,024 [INFO] Grid Daemon starting...
+2026-04-22 15:32:33,136 [INFO] Connected to MT5.
+2026-04-22 15:36:54,399 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:36:57,230 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.91
+2026-04-22 15:37:32,724 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:37:35,438 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.91
+2026-04-22 15:42:37,044 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:42:38,969 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.51
+2026-04-22 15:47:40,698 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:47:42,545 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.80
+2026-04-22 15:50:43,711 [INFO] Grid Daemon starting...
+2026-04-22 15:50:43,861 [INFO] Connected to MT5.
+2026-04-22 15:52:44,170 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:52:46,017 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.80
+2026-04-22 15:55:43,522 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:55:48,797 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.35
+2026-04-22 15:57:47,803 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 15:57:49,587 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.40
+2026-04-22 16:00:50,348 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:00:52,256 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.55
+2026-04-22 16:01:35,782 [INFO] Grid Daemon starting...
+2026-04-22 16:01:35,942 [INFO] Connected to MT5.
+2026-04-22 16:02:51,085 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:05:53,888 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:06:02,383 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.55
+2026-04-22 16:06:35,599 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:06:39,118 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.55
+2026-04-22 16:07:56,498 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:07:58,594 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.61
+2026-04-22 16:11:04,146 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:11:06,135 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.40
+2026-04-22 16:11:40,799 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:11:42,876 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.42
+2026-04-22 16:13:00,335 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:13:02,195 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.43
+2026-04-22 16:16:07,842 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:16:11,721 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.66
+2026-04-22 16:16:44,548 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:16:49,213 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.66
+2026-04-22 16:18:03,753 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:18:05,992 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.66
+2026-04-22 16:21:13,382 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:21:15,182 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.66
+2026-04-22 16:21:50,923 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:21:52,891 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.66
+2026-04-22 16:23:07,711 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:23:09,917 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.66
+2026-04-22 16:26:16,900 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:26:18,706 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.44
+2026-04-22 16:26:54,534 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:26:56,446 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.44
+2026-04-22 16:28:11,696 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:28:13,608 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.57
+2026-04-22 16:31:20,359 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:31:22,219 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.57
+2026-04-22 16:31:58,093 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:33:15,231 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:36:23,923 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:36:25,926 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.63
+2026-04-22 16:37:01,404 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:37:03,782 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.63
+2026-04-22 16:38:19,192 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:38:21,122 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.63
+2026-04-22 16:41:27,573 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:41:29,430 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.44
+2026-04-22 16:42:05,584 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:42:08,190 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.44
+2026-04-22 16:43:22,773 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:43:24,723 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.44
+2026-04-22 16:46:31,423 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:46:41,465 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 16:46:41,468 [ERROR] 
+1 Failed download:
+2026-04-22 16:46:41,471 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 16:47:10,376 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:47:12,261 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.46
+2026-04-22 16:48:26,811 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:48:33,782 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.68
+2026-04-22 16:51:43,208 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:51:45,302 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.01
+2026-04-22 16:52:13,997 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:52:16,336 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.09
+2026-04-22 16:53:35,440 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:53:37,445 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.18
+2026-04-22 16:56:47,020 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:56:49,136 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 7.99
+2026-04-22 16:57:17,928 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:57:20,173 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.00
+2026-04-22 16:57:32,647 [INFO] Grid Daemon starting...
+2026-04-22 16:57:32,747 [INFO] Connected to MT5.
+2026-04-22 16:58:39,166 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 16:58:41,124 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.19
+2026-04-22 17:01:50,970 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:01:52,904 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.23
+2026-04-22 17:02:22,098 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:02:24,137 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.23
+2026-04-22 17:02:32,565 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:02:37,755 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.23
+2026-04-22 17:03:42,802 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:03:44,987 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.23
+2026-04-22 17:06:54,694 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:06:59,634 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.23
+2026-04-22 17:07:25,929 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:07:30,052 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.23
+2026-04-22 17:07:39,571 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:07:41,842 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.23
+2026-04-22 17:08:46,845 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:08:48,987 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.23
+2026-04-22 17:12:01,437 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:12:03,333 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.21
+2026-04-22 17:12:31,669 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:12:33,739 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.21
+2026-04-22 17:12:43,496 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:13:50,676 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:13:52,856 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.24
+2026-04-22 17:17:05,115 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:17:08,881 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.42
+2026-04-22 17:17:35,454 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:17:37,478 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.42
+2026-04-22 17:17:48,036 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:17:49,848 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.42
+2026-04-22 17:18:54,576 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:18:59,747 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.42
+2026-04-22 17:22:10,548 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:22:12,474 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.49
+2026-04-22 17:22:39,228 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:22:40,980 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.49
+2026-04-22 17:22:51,466 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:22:53,270 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.49
+2026-04-22 17:24:01,533 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:24:03,400 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.49
+2026-04-22 17:27:14,127 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:27:15,839 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.52
+2026-04-22 17:27:42,765 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:27:52,820 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:27:52,827 [ERROR] 
+1 Failed download:
+2026-04-22 17:27:52,829 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:27:54,933 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:28:04,958 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:28:04,973 [ERROR] 
+1 Failed download:
+2026-04-22 17:28:04,974 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:29:05,137 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:29:12,727 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.54
+2026-04-22 17:32:17,363 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:32:27,392 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:32:27,414 [ERROR] 
+1 Failed download:
+2026-04-22 17:32:27,414 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:32:54,537 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:33:04,558 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:33:04,559 [ERROR] 
+1 Failed download:
+2026-04-22 17:33:04,560 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:33:06,662 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:33:14,369 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.56
+2026-04-22 17:34:14,329 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:34:23,750 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.56
+2026-04-22 17:37:29,084 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:37:34,585 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 8.94
+2026-04-22 17:38:06,172 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:38:15,932 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:38:16,208 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:38:16,222 [ERROR] 
+1 Failed download:
+2026-04-22 17:38:16,228 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:38:25,953 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:38:25,964 [ERROR] 
+1 Failed download:
+2026-04-22 17:38:25,964 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:39:25,380 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:39:35,407 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:39:35,420 [ERROR] 
+1 Failed download:
+2026-04-22 17:39:35,420 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:42:36,169 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:42:46,188 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:42:46,201 [ERROR] 
+1 Failed download:
+2026-04-22 17:42:46,201 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:43:17,728 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:43:27,446 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:43:27,749 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:43:27,766 [ERROR] 
+1 Failed download:
+2026-04-22 17:43:27,767 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:43:37,463 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:43:37,481 [ERROR] 
+1 Failed download:
+2026-04-22 17:43:37,481 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:44:36,959 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:44:39,709 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 9.31
+2026-04-22 17:47:47,652 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:47:57,675 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:47:57,689 [ERROR] 
+1 Failed download:
+2026-04-22 17:47:57,689 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:48:29,311 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:48:38,976 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:48:39,320 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:48:39,334 [ERROR] 
+1 Failed download:
+2026-04-22 17:48:39,334 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:48:47,418 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 9.47
+2026-04-22 17:49:41,224 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:49:49,636 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 9.47
+2026-04-22 17:52:59,138 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:53:09,168 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:53:09,169 [ERROR] 
+1 Failed download:
+2026-04-22 17:53:09,170 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:53:41,030 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:53:49,082 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:53:51,052 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:53:51,065 [ERROR] 
+1 Failed download:
+2026-04-22 17:53:51,065 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:53:59,097 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:53:59,111 [ERROR] 
+1 Failed download:
+2026-04-22 17:53:59,112 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:54:51,259 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:55:01,280 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:55:01,294 [ERROR] 
+1 Failed download:
+2026-04-22 17:55:01,294 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:58:10,645 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:58:20,667 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:58:20,681 [ERROR] 
+1 Failed download:
+2026-04-22 17:58:20,681 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:58:52,745 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:59:00,788 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 17:59:02,381 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 9.61
+2026-04-22 17:59:10,800 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 17:59:10,813 [ERROR] 
+1 Failed download:
+2026-04-22 17:59:10,813 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 18:00:02,969 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:00:07,186 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 9.63
+2026-04-22 18:03:22,554 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:03:25,358 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 9.63
+2026-04-22 18:04:04,221 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:04:12,810 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:04:14,237 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 18:04:14,253 [ERROR] 
+1 Failed download:
+2026-04-22 18:04:14,253 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 18:04:21,842 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 9.63
+2026-04-22 18:05:09,059 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:05:17,055 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 9.63
+2026-04-22 18:08:26,944 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:08:36,964 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 18:08:36,978 [ERROR] 
+1 Failed download:
+2026-04-22 18:08:36,978 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 18:09:15,895 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:09:23,529 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:09:25,915 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 18:09:25,930 [ERROR] 
+1 Failed download:
+2026-04-22 18:09:25,930 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 18:09:33,541 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 18:09:33,555 [ERROR] 
+1 Failed download:
+2026-04-22 18:09:33,555 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 18:10:18,829 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:10:27,048 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 9.42
+2026-04-22 18:13:38,554 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:13:48,580 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 18:13:48,594 [ERROR] 
+1 Failed download:
+2026-04-22 18:13:48,594 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 18:14:27,434 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:14:35,124 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:14:37,231 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 9.60
+2026-04-22 18:14:45,140 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 18:14:45,161 [ERROR] 
+1 Failed download:
+2026-04-22 18:14:45,164 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 18:15:28,602 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:15:38,615 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 18:15:38,628 [ERROR] 
+1 Failed download:
+2026-04-22 18:15:38,629 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 18:18:50,157 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:18:52,630 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 9.70
+2026-04-22 18:19:38,786 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:19:41,249 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.03
+2026-04-22 18:19:46,720 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:19:56,735 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 18:19:56,749 [ERROR] 
+1 Failed download:
+2026-04-22 18:19:56,750 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 18:20:40,395 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:20:44,396 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.03
+2026-04-22 18:23:54,189 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:23:58,275 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.03
+2026-04-22 18:24:42,715 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:24:44,743 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.03
+2026-04-22 18:24:58,340 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:25:00,024 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.03
+2026-04-22 18:25:46,081 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:25:47,765 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 9.62
+2026-04-22 18:28:59,843 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:29:01,479 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.15
+2026-04-22 18:29:46,370 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:29:48,078 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.15
+2026-04-22 18:30:01,620 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:30:03,409 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.39
+2026-04-22 18:30:49,456 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:30:51,107 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.39
+2026-04-22 18:34:04,011 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:34:05,756 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.55
+2026-04-22 18:34:50,420 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:34:52,143 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.55
+2026-04-22 18:35:06,326 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:35:08,111 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.55
+2026-04-22 18:35:53,451 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:35:55,230 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.55
+2026-04-22 18:39:07,705 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:39:09,409 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.68
+2026-04-22 18:39:54,003 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:39:55,802 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.68
+2026-04-22 18:40:10,106 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:40:11,793 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.13
+2026-04-22 18:40:56,960 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:40:58,920 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.13
+2026-04-22 18:44:11,230 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:44:12,896 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.42
+2026-04-22 18:44:57,554 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:44:59,190 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.42
+2026-04-22 18:45:13,680 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:45:15,327 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.42
+2026-04-22 18:46:00,702 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:46:02,366 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.42
+2026-04-22 18:49:14,557 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:49:16,223 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.58
+2026-04-22 18:50:00,832 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:50:02,553 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.58
+2026-04-22 18:50:16,939 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:50:18,788 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.58
+2026-04-22 18:51:04,060 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:51:05,794 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.58
+2026-04-22 18:54:17,984 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:54:19,685 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.95
+2026-04-22 18:55:04,224 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:55:05,822 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.60
+2026-04-22 18:55:20,538 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:55:22,173 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.60
+2026-04-22 18:56:07,668 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:56:09,421 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.78
+2026-04-22 18:59:21,259 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 18:59:23,720 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.78
+2026-04-22 19:00:07,365 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 19:00:09,053 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.78
+2026-04-22 19:00:23,624 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 19:00:25,314 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.78
+2026-04-22 19:01:11,086 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 19:01:14,247 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 11.13
+2026-04-22 19:04:25,285 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 19:04:27,022 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 11.13
+2026-04-22 19:05:10,728 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 19:05:12,475 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 11.13
+2026-04-22 19:05:26,896 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 19:05:28,560 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 11.13
+2026-04-22 19:06:15,722 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 19:06:17,356 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 11.13
+2026-04-22 19:09:28,853 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 19:09:30,577 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 11.13
+2026-04-22 19:10:14,461 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 19:10:16,161 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 11.03
+2026-04-22 19:10:30,255 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 19:10:43,020 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 19:10:43,070 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 19:10:44,012 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 19:10:44,339 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 19:10:46,335 [INFO] MT5 reconnected successfully
+2026-04-22 19:10:46,367 [INFO] MT5 reconnected successfully
+2026-04-22 19:10:46,400 [INFO] MT5 reconnected successfully
+2026-04-22 19:10:46,401 [INFO] MT5 reconnected successfully
+2026-04-22 19:10:52,366 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 19:10:52,398 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 19:10:52,429 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 19:10:52,429 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 19:10:55,489 [INFO] MT5 reconnected successfully
+2026-04-22 19:10:55,521 [INFO] MT5 reconnected successfully
+2026-04-22 19:11:01,505 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 19:11:01,537 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 19:11:01,537 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 19:11:04,721 [INFO] MT5 reconnected successfully
+2026-04-22 19:11:04,724 [INFO] MT5 reconnected successfully
+2026-04-22 19:11:04,754 [INFO] MT5 reconnected successfully
+2026-04-22 19:11:04,754 [INFO] MT5 reconnected successfully
+2026-04-22 19:11:08,749 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 19:11:08,749 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 19:11:08,764 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 19:11:08,764 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 19:11:12,005 [INFO] MT5 reconnected successfully
+2026-04-22 19:11:12,084 [INFO] MT5 reconnected successfully
+2026-04-22 19:11:12,084 [INFO] MT5 reconnected successfully
+2026-04-22 19:11:12,084 [INFO] MT5 reconnected successfully
+2026-04-22 19:11:32,214 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 19:11:34,773 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 11.20
+2026-04-22 19:14:45,233 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 19:14:46,994 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 11.70
+2026-04-22 19:15:29,470 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 19:15:31,108 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 11.91
+2026-04-22 19:15:45,226 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 19:15:45,264 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 19:15:45,266 [ERROR] 
+1 Failed download:
+2026-04-22 19:15:45,269 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 19:16:36,077 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 19:16:37,852 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 11.95
+2026-04-22 19:18:32,030 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 19:18:32,030 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 21:06:11,347 [INFO] Grid Daemon starting...
+2026-04-22 21:06:15,697 [INFO] Connected to MT5.
+2026-04-22 21:12:00,508 [INFO] Grid Daemon starting...
+2026-04-22 21:12:00,579 [INFO] Connected to MT5.
+2026-04-22 21:12:40,801 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 21:12:41,465 [INFO] MT5 reconnected successfully
+2026-04-22 21:12:55,335 [INFO] Grid Daemon starting...
+2026-04-22 21:12:55,379 [INFO] Connected to MT5.
+2026-04-22 21:17:00,864 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 21:17:00,885 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 12.02
+2026-04-22 21:17:55,024 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 21:17:55,070 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 12.02
+2026-04-22 21:20:38,204 [INFO] Grid Daemon starting...
+2026-04-22 21:20:38,245 [INFO] Connected to MT5.
+2026-04-22 21:20:38,247 [INFO] Startup check: Re-anchoring grid to current price.
+2026-04-22 21:20:38,275 [INFO] Grid re-anchored at 4726.02. New Spacing: 12.34
+2026-04-22 21:22:02,441 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 21:22:02,462 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 12.34
+2026-04-22 21:22:56,564 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 21:22:56,582 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 12.34
+2026-04-22 21:25:37,819 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 21:25:37,839 [INFO] Grid re-anchored at 4725.3. New Spacing: 12.42
+2026-04-22 21:27:03,997 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 21:27:04,011 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 12.42
+2026-04-22 21:27:58,109 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 21:27:58,125 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 12.42
+2026-04-22 21:30:39,373 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 21:30:39,390 [INFO] Grid re-anchored at 4724.52. New Spacing: 11.67
+2026-04-22 21:32:05,507 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 21:32:05,550 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 11.67
+2026-04-22 21:32:59,665 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 21:32:59,690 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 11.69
+2026-04-22 21:34:17,349 [INFO] Grid Daemon starting...
+2026-04-22 21:34:17,421 [INFO] Connected to MT5.
+2026-04-22 21:34:17,425 [INFO] Startup check: Re-anchoring grid to current price.
+2026-04-22 21:34:17,462 [INFO] Grid re-anchored at 4727.38. New Spacing: 11.73
+2026-04-22 21:35:41,059 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 21:35:41,079 [INFO] Grid re-anchored at 4728.56. New Spacing: 11.91
+2026-04-22 21:37:07,072 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 21:38:01,291 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 21:38:18,747 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 11.91
+2026-04-22 21:38:21,108 [ERROR] Loop error: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 82, in main
+    price_data = get_live_price(mt5_cfg.symbol)
+TypeError: 'NoneType' object is not subscriptable
+2026-04-22 21:38:23,122 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 21:38:23,163 [INFO] MT5 reconnected successfully
+2026-04-22 21:39:17,115 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 21:39:17,169 [INFO] Grid re-anchored at 4729.92. New Spacing: 11.94
+2026-04-22 21:40:42,699 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 21:40:42,741 [INFO] Grid re-anchored at 4730.47. New Spacing: 12.04
+2026-04-22 21:43:20,290 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 21:43:20,338 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 12.12
+2026-04-22 21:43:22,854 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 21:43:22,895 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 12.12
+2026-04-22 21:44:18,801 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 21:44:18,846 [INFO] Grid re-anchored at 4729.95. New Spacing: 12.12
+2026-04-22 21:45:44,434 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 21:45:44,488 [INFO] Grid re-anchored at 4726.23. New Spacing: 11.08
+2026-04-22 21:48:21,983 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 21:48:22,014 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 11.19
+2026-04-22 21:48:24,650 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 21:48:24,694 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 11.19
+2026-04-22 21:49:20,520 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 21:49:20,571 [INFO] Grid re-anchored at 4728.24. New Spacing: 11.19
+2026-04-22 21:50:46,180 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 21:50:46,222 [INFO] Grid re-anchored at 4728.95. New Spacing: 11.29
+2026-04-22 21:53:23,677 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 21:53:23,723 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 11.29
+2026-04-22 21:53:26,493 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 21:53:26,540 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 11.29
+2026-04-22 21:54:22,208 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 21:54:22,249 [INFO] Grid re-anchored at 4729.7. New Spacing: 11.29
+2026-04-22 21:55:47,958 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 21:55:48,009 [INFO] Grid re-anchored at 4729.19. New Spacing: 11.29
+2026-04-22 21:58:25,403 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 21:58:25,456 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 11.29
+2026-04-22 21:58:28,284 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 21:59:23,817 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 21:59:23,863 [INFO] Grid re-anchored at 4728.41. New Spacing: 11.29
+2026-04-22 22:00:49,645 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 22:00:49,695 [INFO] Grid re-anchored at 4728.78. New Spacing: 10.08
+2026-04-22 22:03:27,092 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 22:03:29,909 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 22:04:25,366 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 22:04:36,475 [INFO] Grid re-anchored at 4728.78. New Spacing: 10.08
+2026-04-22 22:04:41,777 [ERROR] Loop error: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 82, in main
+    price_data = get_live_price(mt5_cfg.symbol)
+TypeError: 'NoneType' object is not subscriptable
+2026-04-22 22:04:43,791 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 22:04:43,813 [INFO] MT5 reconnected successfully
+2026-04-22 22:04:44,649 [ERROR] Loop error: 'NoneType' object is not subscriptable
+Traceback (most recent call last):
+  File "D:\Angular\ICT_BOT\grid_daemon.py", line 82, in main
+    price_data = get_live_price(mt5_cfg.symbol)
+TypeError: 'NoneType' object is not subscriptable
+2026-04-22 22:04:46,661 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 22:04:46,703 [INFO] MT5 reconnected successfully
+2026-04-22 22:05:51,308 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 22:05:58,580 [INFO] Grid re-anchored at 4735.9. New Spacing: 10.69
+2026-04-22 22:09:38,150 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 22:09:38,198 [INFO] Grid re-anchored at 4735.63. New Spacing: 10.74
+2026-04-22 22:09:43,518 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 22:09:43,565 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.74
+2026-04-22 22:09:46,256 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 22:09:46,303 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.74
+2026-04-22 22:11:00,261 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 22:11:00,299 [INFO] Grid re-anchored at 4737.7. New Spacing: 10.98
+2026-04-22 22:14:39,765 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 22:14:39,803 [INFO] Grid re-anchored at 4735.0. New Spacing: 10.98
+2026-04-22 22:14:45,188 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 22:14:45,211 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.98
+2026-04-22 22:14:47,936 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 22:14:47,968 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.98
+2026-04-22 22:16:01,898 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 22:16:01,933 [INFO] Grid re-anchored at 4736.42. New Spacing: 10.25
+2026-04-22 22:19:41,343 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 22:19:46,651 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 22:19:49,588 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 22:20:12,432 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.25
+2026-04-22 22:20:12,435 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.25
+2026-04-22 22:20:12,471 [INFO] Grid re-anchored at 4735.01. New Spacing: 10.25
+2026-04-22 22:21:03,446 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 22:21:03,470 [INFO] Grid re-anchored at 4734.74. New Spacing: 10.44
+2026-04-22 22:25:14,253 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 22:25:14,253 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 22:25:14,272 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.49
+2026-04-22 22:25:14,272 [INFO] Grid re-anchored at 4736.09. New Spacing: 10.49
+2026-04-22 22:25:14,295 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 22:25:14,312 [INFO] Auto-ATR Spacing: Grid updated. New Spacing: 10.49
+2026-04-22 22:26:05,222 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 22:26:05,240 [INFO] Grid re-anchored at 4736.53. New Spacing: 10.49
+2026-04-22 22:30:16,229 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 22:30:16,229 [INFO] Performing periodic ATR re-analysis...
+2026-04-22 22:30:16,229 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 22:31:06,851 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-22 22:31:22,771 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 22:31:22,779 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 22:31:22,784 [ERROR] 
+1 Failed download:
+2026-04-22 22:31:22,784 [ERROR] 
+1 Failed download:
+2026-04-22 22:31:22,784 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 22:31:22,784 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 22:31:22,790 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 22:31:22,790 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 22:31:23,022 [ERROR] $GC=F: possibly delisted; no price data found  (period=60d)
+2026-04-22 22:31:23,022 [ERROR] 
+1 Failed download:
+2026-04-22 22:31:23,025 [ERROR] ['GC=F']: possibly delisted; no price data found  (period=60d)
+2026-04-22 22:31:23,033 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 22:31:41,025 [INFO] Grid re-anchored at 4733.91. New Spacing: 10.49
+2026-04-22 22:31:41,033 [INFO] MT5 reconnected successfully
+2026-04-22 22:31:41,033 [INFO] MT5 reconnected successfully
+2026-04-22 22:31:41,080 [INFO] MT5 reconnected successfully
+2026-04-22 22:33:27,711 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 22:33:27,711 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 22:33:27,789 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 22:33:29,676 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 22:33:31,399 [INFO] MT5 reconnected successfully
+2026-04-22 22:33:31,414 [INFO] MT5 reconnected successfully
+2026-04-22 22:33:31,414 [INFO] MT5 reconnected successfully
+2026-04-22 22:33:31,460 [INFO] MT5 reconnected successfully
+2026-04-22 22:33:33,414 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 22:33:33,430 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 22:33:33,430 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 22:33:33,477 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 22:33:36,291 [INFO] MT5 reconnected successfully
+2026-04-22 22:33:36,385 [ERROR] MT5 reconnect failed: MT5 initialize failed: (-10001, 'IPC send failed')
+2026-04-22 22:33:37,399 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 22:33:38,302 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-22 22:33:38,302 [WARNING] MT5 connection lost — attempting reconnect
+2026-04-23 11:14:01,002 [INFO] Grid Daemon starting...
+2026-04-23 11:14:10,656 [INFO] Connected to MT5.
+2026-04-23 11:14:10,701 [INFO] Startup check: Re-anchoring grid to current price.
+2026-04-23 11:14:10,829 [INFO] Grid re-anchored at 4736.44. New Spacing: 9.31
+2026-04-23 11:14:12,887 [INFO] Drift detected (25.76 > 13.96): Re-anchoring grid.
+2026-04-23 11:14:12,925 [INFO] Grid re-anchored at 4710.68. New Spacing: 9.45
+2026-04-23 11:19:10,684 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 11:19:10,709 [INFO] Grid re-anchored at 4710.42. New Spacing: 8.91
+2026-04-23 11:24:12,580 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 11:24:12,617 [INFO] Grid re-anchored at 4710.69. New Spacing: 8.99
+2026-04-23 11:29:14,305 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 11:29:14,334 [INFO] Grid re-anchored at 4711.33. New Spacing: 9.15
+2026-04-23 11:34:16,163 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 11:34:16,192 [INFO] Grid re-anchored at 4712.98. New Spacing: 8.46
+2026-04-23 11:39:17,747 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 11:39:17,772 [INFO] Grid re-anchored at 4712.5. New Spacing: 8.67
+2026-04-23 11:44:19,430 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 11:44:19,464 [INFO] Grid re-anchored at 4716.03. New Spacing: 8.93
+2026-04-23 11:49:21,199 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 11:49:21,229 [INFO] Grid re-anchored at 4714.3. New Spacing: 8.82
+2026-04-23 11:54:22,734 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 11:54:22,765 [INFO] Grid re-anchored at 4715.23. New Spacing: 8.93
+2026-04-23 11:59:23,986 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 11:59:24,019 [INFO] Grid re-anchored at 4713.34. New Spacing: 9.05
+2026-04-23 12:04:25,275 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 12:04:25,314 [INFO] Grid re-anchored at 4709.76. New Spacing: 9.05
+2026-04-23 12:09:26,512 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 12:09:26,530 [INFO] Grid re-anchored at 4713.43. New Spacing: 9.25
+2026-04-23 12:14:27,836 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 12:14:27,865 [INFO] Grid re-anchored at 4711.62. New Spacing: 9.35
+2026-04-23 12:19:29,596 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 12:19:29,631 [INFO] Grid re-anchored at 4713.38. New Spacing: 9.35
+2026-04-23 12:24:27,252 [INFO] Triggered level: BUY_1 at 4702.96
+2026-04-23 12:24:27,601 [INFO] Order filled: BUY_1 | Ticket: 432512910
+2026-04-23 12:24:31,648 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 12:24:31,684 [INFO] Grid re-anchored at 4704.4. New Spacing: 9.90
+2026-04-23 12:29:33,415 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 12:29:33,447 [INFO] Grid re-anchored at 4706.0. New Spacing: 9.90
+2026-04-23 12:34:35,134 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 12:34:35,169 [INFO] Grid re-anchored at 4709.28. New Spacing: 9.92
+2026-04-23 12:39:36,820 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 12:39:36,861 [INFO] Grid re-anchored at 4711.13. New Spacing: 10.27
+2026-04-23 12:44:38,612 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 12:44:38,635 [INFO] Grid re-anchored at 4713.1. New Spacing: 10.27
+2026-04-23 12:49:40,286 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 12:49:40,308 [INFO] Grid re-anchored at 4717.5. New Spacing: 10.37
+2026-04-23 12:53:14,693 [INFO] Grid Daemon starting...
+2026-04-23 12:53:14,739 [INFO] Connected to MT5.
+2026-04-23 12:53:14,742 [INFO] Startup check: Re-anchoring grid to current price.
+2026-04-23 12:53:14,770 [INFO] Grid re-anchored at 4716.69. New Spacing: 10.56
+2026-04-23 12:54:42,039 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 12:54:42,060 [INFO] Grid re-anchored at 4716.13. New Spacing: 10.56
+2026-04-23 12:58:14,190 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 12:58:14,207 [INFO] Grid re-anchored at 4717.89. New Spacing: 10.56
+2026-04-23 12:59:43,637 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 12:59:43,760 [INFO] Grid re-anchored at 4719.34. New Spacing: 10.56
+2026-04-23 13:03:15,972 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:03:15,992 [INFO] Grid re-anchored at 4720.31. New Spacing: 10.59
+2026-04-23 13:04:45,719 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:04:45,747 [INFO] Grid re-anchored at 4721.61. New Spacing: 10.59
+2026-04-23 13:08:17,866 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:08:17,886 [INFO] Grid re-anchored at 4719.08. New Spacing: 10.64
+2026-04-23 13:09:47,616 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:09:47,658 [INFO] Grid re-anchored at 4718.74. New Spacing: 10.66
+2026-04-23 13:13:19,874 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:13:19,908 [INFO] Grid re-anchored at 4720.01. New Spacing: 10.72
+2026-04-23 13:14:49,608 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:14:49,634 [INFO] Grid re-anchored at 4718.86. New Spacing: 10.72
+2026-04-23 13:18:21,885 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:18:21,913 [INFO] Grid re-anchored at 4720.73. New Spacing: 10.55
+2026-04-23 13:19:51,587 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:19:51,622 [INFO] Grid re-anchored at 4719.85. New Spacing: 10.55
+2026-04-23 13:23:23,925 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:23:23,951 [INFO] Grid re-anchored at 4718.06. New Spacing: 10.60
+2026-04-23 13:24:53,560 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:24:53,595 [INFO] Grid re-anchored at 4717.97. New Spacing: 10.65
+2026-04-23 13:28:25,889 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:28:25,909 [INFO] Grid re-anchored at 4720.82. New Spacing: 10.65
+2026-04-23 13:29:55,519 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:29:55,558 [INFO] Grid re-anchored at 4715.1. New Spacing: 10.82
+2026-04-23 13:33:27,860 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:33:27,886 [INFO] Grid re-anchored at 4709.55. New Spacing: 10.87
+2026-04-23 13:34:57,397 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:34:57,423 [INFO] Grid re-anchored at 4709.6. New Spacing: 10.90
+2026-04-23 13:38:29,775 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:38:29,806 [INFO] Grid re-anchored at 4706.93. New Spacing: 11.22
+2026-04-23 13:39:59,343 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:39:59,369 [INFO] Grid re-anchored at 4707.58. New Spacing: 11.22
+2026-04-23 13:43:31,801 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:43:31,834 [INFO] Grid re-anchored at 4707.46. New Spacing: 11.22
+2026-04-23 13:45:01,252 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:45:01,284 [INFO] Grid re-anchored at 4703.31. New Spacing: 11.02
+2026-04-23 13:48:33,813 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:48:33,830 [INFO] Grid re-anchored at 4703.95. New Spacing: 11.39
+2026-04-23 13:50:03,240 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:50:03,274 [INFO] Grid re-anchored at 4706.35. New Spacing: 11.41
+2026-04-23 13:53:35,690 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:53:35,712 [INFO] Grid re-anchored at 4705.43. New Spacing: 11.49
+2026-04-23 13:55:05,239 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:55:05,274 [INFO] Grid re-anchored at 4704.68. New Spacing: 11.49
+2026-04-23 13:58:37,565 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 13:58:37,598 [INFO] Grid re-anchored at 4704.75. New Spacing: 11.49
+2026-04-23 14:00:07,299 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:00:07,325 [INFO] Grid re-anchored at 4702.4. New Spacing: 10.25
+2026-04-23 14:03:39,593 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:03:39,625 [INFO] Grid re-anchored at 4699.39. New Spacing: 10.64
+2026-04-23 14:05:09,258 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:05:09,280 [INFO] Grid re-anchored at 4697.65. New Spacing: 10.93
+2026-04-23 14:08:41,455 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:08:41,485 [INFO] Grid re-anchored at 4696.81. New Spacing: 10.93
+2026-04-23 14:10:11,102 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:10:11,127 [INFO] Grid re-anchored at 4696.95. New Spacing: 10.98
+2026-04-23 14:13:43,430 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:13:43,459 [INFO] Grid re-anchored at 4699.21. New Spacing: 10.98
+2026-04-23 14:15:13,051 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:15:13,069 [INFO] Grid re-anchored at 4696.1. New Spacing: 9.85
+2026-04-23 14:18:45,047 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:18:45,073 [INFO] Grid re-anchored at 4701.51. New Spacing: 10.39
+2026-04-23 14:19:38,281 [INFO] Grid Daemon starting...
+2026-04-23 14:19:38,387 [INFO] Connected to MT5.
+2026-04-23 14:19:38,393 [INFO] Startup check: Re-anchoring grid to current price.
+2026-04-23 14:19:38,430 [INFO] Grid re-anchored at 4699.38. New Spacing: 10.39
+2026-04-23 14:19:38,438 [INFO] Trailing SL: BUY_1 (T:432512910) 4667.131 -> 4696.38
+2026-04-23 14:20:10,901 [INFO] Trailing SL: BUY_1 (T:432512910) 4696.38 -> 4697.66
+2026-04-23 14:22:17,884 [INFO] Trailing SL: BUY_1 (T:432512910) 4697.66 -> 4698.84
+2026-04-23 14:23:14,576 [INFO] Grid Daemon starting...
+2026-04-23 14:23:14,696 [INFO] Connected to MT5.
+2026-04-23 14:23:14,700 [INFO] Startup check: Re-anchoring grid to current price.
+2026-04-23 14:23:14,730 [INFO] Grid re-anchored at 4701.63. New Spacing: 10.40
+2026-04-23 14:28:14,310 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:28:14,339 [INFO] Grid re-anchored at 4701.8. New Spacing: 10.40
+2026-04-23 14:28:30,522 [INFO] Trailing SL (Fixed): BUY_1 (T:432512910) 4698.84 -> 4699.88
+2026-04-23 14:29:15,281 [INFO] Grid Daemon starting...
+2026-04-23 14:29:15,380 [INFO] Connected to MT5.
+2026-04-23 14:29:15,380 [INFO] Startup check: Re-anchoring grid to current price.
+2026-04-23 14:29:15,414 [INFO] Grid re-anchored at 4700.16. New Spacing: 10.43
+2026-04-23 14:29:16,916 [INFO] Detected manual close for BUY_1 (T:432512910) (Ticket: 432512910)
+2026-04-23 14:33:16,112 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:33:16,157 [INFO] Grid re-anchored at 4702.35. New Spacing: 9.99
+2026-04-23 14:34:14,993 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:34:15,029 [INFO] Grid re-anchored at 4702.07. New Spacing: 9.99
+2026-04-23 14:38:17,690 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:38:17,732 [INFO] Grid re-anchored at 4700.25. New Spacing: 10.09
+2026-04-23 14:39:16,666 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:39:16,708 [INFO] Grid re-anchored at 4699.89. New Spacing: 10.09
+2026-04-23 14:43:19,439 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:43:19,483 [INFO] Grid re-anchored at 4700.85. New Spacing: 10.14
+2026-04-23 14:44:18,338 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:44:18,386 [INFO] Grid re-anchored at 4700.1. New Spacing: 10.14
+2026-04-23 14:48:21,131 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:48:21,172 [INFO] Grid re-anchored at 4699.48. New Spacing: 9.96
+2026-04-23 14:49:20,010 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:49:20,058 [INFO] Grid re-anchored at 4699.66. New Spacing: 9.96
+2026-04-23 14:53:22,841 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:53:22,882 [INFO] Grid re-anchored at 4701.06. New Spacing: 10.10
+2026-04-23 14:54:21,601 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:54:21,643 [INFO] Grid re-anchored at 4695.58. New Spacing: 10.28
+2026-04-23 14:58:24,555 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:58:24,655 [INFO] Grid re-anchored at 4696.77. New Spacing: 10.28
+2026-04-23 14:59:23,388 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 14:59:23,428 [INFO] Grid re-anchored at 4695.67. New Spacing: 10.28
+2026-04-23 15:03:26,158 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:03:26,202 [INFO] Grid re-anchored at 4700.57. New Spacing: 10.00
+2026-04-23 15:04:25,186 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:04:25,238 [INFO] Grid re-anchored at 4700.7. New Spacing: 10.01
+2026-04-23 15:08:27,877 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:08:27,917 [INFO] Grid re-anchored at 4697.63. New Spacing: 10.04
+2026-04-23 15:09:26,822 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:09:26,869 [INFO] Grid re-anchored at 4693.58. New Spacing: 10.33
+2026-04-23 15:13:29,431 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:13:29,497 [INFO] Grid re-anchored at 4685.14. New Spacing: 11.03
+2026-04-23 15:14:28,308 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:14:28,355 [INFO] Grid re-anchored at 4688.82. New Spacing: 11.05
+2026-04-23 15:18:31,136 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:18:31,187 [INFO] Grid re-anchored at 4689.72. New Spacing: 10.58
+2026-04-23 15:19:29,846 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:19:29,882 [INFO] Grid re-anchored at 4689.36. New Spacing: 10.58
+2026-04-23 15:23:32,812 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:23:32,916 [INFO] Grid re-anchored at 4685.7. New Spacing: 10.94
+2026-04-23 15:24:31,398 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:24:31,447 [INFO] Grid re-anchored at 4688.09. New Spacing: 10.94
+2026-04-23 15:28:34,487 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:28:34,546 [INFO] Grid re-anchored at 4689.27. New Spacing: 10.94
+2026-04-23 15:29:32,982 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:29:33,033 [INFO] Grid re-anchored at 4688.22. New Spacing: 10.94
+2026-04-23 15:33:36,193 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:33:36,234 [INFO] Grid re-anchored at 4690.88. New Spacing: 10.73
+2026-04-23 15:34:34,492 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:34:34,542 [INFO] Grid re-anchored at 4692.4. New Spacing: 10.92
+2026-04-23 15:38:37,755 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:38:37,808 [INFO] Grid re-anchored at 4691.09. New Spacing: 10.92
+2026-04-23 15:39:36,198 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:39:36,303 [INFO] Grid re-anchored at 4692.2. New Spacing: 10.92
+2026-04-23 15:43:39,230 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:43:39,273 [INFO] Grid re-anchored at 4690.31. New Spacing: 11.26
+2026-04-23 15:44:37,706 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:44:37,733 [INFO] Grid re-anchored at 4690.25. New Spacing: 11.26
+2026-04-23 15:48:40,872 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:48:40,896 [INFO] Grid re-anchored at 4690.76. New Spacing: 10.64
+2026-04-23 15:49:39,254 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:49:39,364 [INFO] Grid re-anchored at 4690.53. New Spacing: 10.64
+2026-04-23 15:53:42,466 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:53:42,496 [INFO] Grid re-anchored at 4691.25. New Spacing: 10.66
+2026-04-23 15:54:40,811 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:54:40,858 [INFO] Grid re-anchored at 4691.15. New Spacing: 10.66
+2026-04-23 15:58:43,904 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:58:43,952 [INFO] Grid re-anchored at 4696.86. New Spacing: 10.97
+2026-04-23 15:59:42,403 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 15:59:42,444 [INFO] Grid re-anchored at 4696.66. New Spacing: 10.97
+2026-04-23 16:03:45,346 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 16:03:45,371 [INFO] Grid re-anchored at 4699.08. New Spacing: 10.38
+2026-04-23 16:04:43,922 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 16:04:43,943 [INFO] Grid re-anchored at 4698.3. New Spacing: 10.43
+2026-04-23 16:08:46,795 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 16:08:46,822 [INFO] Grid re-anchored at 4697.14. New Spacing: 10.47
+2026-04-23 16:09:45,417 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 16:09:45,438 [INFO] Grid re-anchored at 4697.65. New Spacing: 10.47
+2026-04-23 16:13:48,186 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 16:13:48,211 [INFO] Grid re-anchored at 4699.03. New Spacing: 10.47
+2026-04-23 16:14:46,778 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 16:14:46,805 [INFO] Grid re-anchored at 4697.77. New Spacing: 10.49
+2026-04-23 16:18:49,677 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 16:18:49,701 [INFO] Grid re-anchored at 4700.09. New Spacing: 10.19
+2026-04-23 16:19:48,124 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 16:19:48,154 [INFO] Grid re-anchored at 4701.74. New Spacing: 10.37
+2026-04-23 16:23:51,066 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 16:23:51,105 [INFO] Grid re-anchored at 4701.65. New Spacing: 10.47
+2026-04-23 16:24:49,565 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 16:24:49,592 [INFO] Grid re-anchored at 4700.9. New Spacing: 10.47
+2026-04-23 16:28:52,640 [INFO] Periodic check: Performing ATR re-analysis and re-anchoring.
+2026-04-23 16:28:52,663 [INFO] Grid re-anchored at 4700.84. New Spacing: 10.47
+2026-04-23 16:30:24,180 [INFO] Grid Daemon starting...
+2026-04-23 16:30:24,236 [INFO] Connected to MT5.

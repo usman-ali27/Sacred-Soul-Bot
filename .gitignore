@@ -11,3 +11,4 @@ alert_config.json
 alert_state.json
 test_timing*.py
 test_debug.py
+signal_config.json

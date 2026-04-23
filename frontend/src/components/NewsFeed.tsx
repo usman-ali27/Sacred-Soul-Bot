@@ -1,6 +1,9 @@
 import React from "react";
 
-export const NewsFeed = ({ items }: { items: any[] }) => {
+export const NewsFeed = ({ items, guard }: { items: any[], guard?: { blocked: boolean, reason: string } }) => {
+  const isBlocked = guard?.blocked || false;
+  const reason = guard?.reason || "Buffer Clear";
+
   return (
     <div
       style={{
@@ -12,98 +15,77 @@ export const NewsFeed = ({ items }: { items: any[] }) => {
         paddingRight: 8,
       }}
     >
-      {items.length === 0 && (
-        <div style={{ textAlign: "center", padding: 40, color: "#888" }}>
-          <div style={{ fontSize: 24, opacity: 0.2 }}>🛡️</div>
-          <div
-            style={{
-              fontSize: 11,
-              fontWeight: "bold",
-              textTransform: "uppercase",
-              letterSpacing: 2,
-            }}
-          >
-            News Guard: Buffer Clear
-          </div>
+      {/* News Guard Header */}
+      <div style={{ 
+        textAlign: "center", 
+        padding: 20, 
+        background: isBlocked ? "rgba(255,77,77,0.05)" : "rgba(0,255,133,0.05)",
+        border: `1px solid ${isBlocked ? "rgba(255,77,77,0.15)" : "rgba(0,255,133,0.15)"}`,
+        borderRadius: 8,
+        marginBottom: 8 
+      }}>
+        <div style={{ fontSize: 24, marginBottom: 4 }}>{isBlocked ? "🚨" : "🛡️"}</div>
+        <div
+          style={{
+            fontSize: 10,
+            fontWeight: "bold",
+            textTransform: "uppercase",
+            letterSpacing: 2,
+            color: isBlocked ? "#FF4D4D" : "#00FF85"
+          }}
+        >
+          {reason}
+        </div>
+      </div>
+
+      {items.length === 0 && !isBlocked && (
+        <div style={{ textAlign: "center", padding: 20, color: "#888", fontSize: 12 }}>
+          No high impact news scheduled for today.
         </div>
       )}
-      {items.map((item) => (
+
+      {items.map((item, idx) => (
         <div
-          key={item.id}
+          key={idx}
           style={{
             padding: 16,
             background: "#16181D",
             border: "1px solid rgba(255,255,255,0.05)",
             borderRadius: 6,
-            marginBottom: 8,
           }}
         >
-          <div style={{ display: "flex", gap: 16 }}>
-            <div
-              style={{
-                marginTop: 4,
-                width: 32,
-                height: 32,
-                borderRadius: 16,
-                background:
-                  item.sentiment > 0
-                    ? "rgba(0,255,133,0.05)"
-                    : "rgba(255,77,77,0.05)",
-                color: item.sentiment > 0 ? "#00FF85" : "#FF4D4D",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
-            >
-              {item.sentiment > 0 ? "↑" : "↓"}
-            </div>
+          <div style={{ display: "flex", gap: 12 }}>
             <div style={{ flex: 1 }}>
               <div
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: 12,
+                  justifyContent: "space-between",
                   marginBottom: 8,
                 }}
               >
                 <span
                   style={{
-                    fontSize: 10,
+                    fontSize: 9,
                     fontWeight: "bold",
                     textTransform: "uppercase",
-                    color:
-                      item.impact === "HIGH"
-                        ? "#D4AF37"
-                        : item.impact === "MEDIUM"
-                          ? "#00D1FF"
-                          : "#888",
-                    background:
-                      item.impact === "HIGH"
-                        ? "rgba(212,175,55,0.08)"
-                        : item.impact === "MEDIUM"
-                          ? "rgba(0,209,255,0.08)"
-                          : "rgba(136,136,136,0.08)",
+                    color: "#D4AF37",
+                    background: "rgba(212,175,55,0.1)",
                     borderRadius: 4,
                     padding: "2px 6px",
-                    marginRight: 8,
                   }}
                 >
-                  {item.impact} IMPACT
+                  HIGH IMPACT
                 </span>
-                <span
-                  style={{
-                    fontSize: 10,
-                    color: "#888",
-                    fontWeight: "bold",
-                    textTransform: "uppercase",
-                    letterSpacing: 1,
-                  }}
-                >
-                  Global Economics
+                <span style={{ fontSize: 10, color: "#888", fontWeight: "bold" }}>
+                  {item.time_str}
                 </span>
               </div>
               <div style={{ fontSize: 13, color: "#E0E0E0", fontWeight: 500 }}>
                 {item.title}
+              </div>
+              <div style={{ fontSize: 10, color: "#666", marginTop: 4, textTransform: "uppercase" }}>
+                USD • {item.country}
               </div>
             </div>
           </div>

@@ -107,13 +107,31 @@ class MT5Config:
     deviation: int = 20  # max slippage in points
     magic: int = 202604   # magic number for bot trades
     max_spread_price: float = 0.60
-    max_entry_drift_price: float = 2.00
+    max_entry_drift_price: float = 10.00
     kill_switch: bool = False
     max_trades_per_day: int = 8
     max_open_positions: int = 2
     enforce_session_window: bool = False
     session_start_utc: int = 0
     session_end_utc: int = 23
+
+
+def build_mt5_config_from_credentials(creds: dict) -> MT5Config:
+    """Helper to build a typed MT5Config from raw JSON credentials."""
+    return MT5Config(
+        login=int(creds["login"]),
+        password=creds["password"],
+        server=creds["server"],
+        symbol=creds.get("symbol", "XAUUSD"),
+        max_lot=float(creds.get("max_lot", 0.10)),
+        max_spread_price=float(creds.get("max_spread_price", 0.60)),
+        max_entry_drift_price=float(creds.get("max_entry_drift_price", 10.00)),
+        max_trades_per_day=int(creds.get("max_trades_per_day", 8)),
+        max_open_positions=int(creds.get("max_open_positions", 2)),
+        enforce_session_window=bool(creds.get("enforce_session_window", False)),
+        session_start_utc=int(creds.get("session_start_utc", 0)),
+        session_end_utc=int(creds.get("session_end_utc", 23)),
+    )
     min_stop_distance_pips: float = 2.0    # reject if SL distance < N pips
     max_stop_distance_pips: float = 200.0  # reject if SL distance > N pips
     min_rr_ratio: float = 1.5              # reject if TP/SL ratio < this
@@ -566,6 +584,29 @@ def close_position(ticket: int) -> TradeResult:
                        message=f"Closed {ticket} @ {result.price}")
 
 
+def modify_sl_tp(ticket: int, sl: float, tp: float = 0.0) -> bool:
+    """Update SL and TP for an existing MT5 position."""
+    try:
+        import MetaTrader5 as mt5
+        positions = mt5.positions_get(ticket=ticket)
+        if not positions or len(positions) == 0:
+            return False
+
+        pos = positions[0]
+        request = {
+            "action": mt5.TRADE_ACTION_SLTP,
+            "symbol": pos.symbol,
+            "position": ticket,
+            "sl": float(sl),
+            "tp": float(tp) if tp > 0 else pos.tp,
+        }
+
+        result = mt5.order_send(request)
+        return result.retcode == mt5.TRADE_RETCODE_DONE
+    except Exception:
+        return False
+
+
 def get_live_price(symbol: str) -> dict | None:
     """Return current bid/ask/last for *symbol*, or None on failure.
 
@@ -718,20 +759,20 @@ def _prepare_trade_request(
 
     entry_drift_price = abs(price - entry_price)
     if config.max_entry_drift_price > 0 and entry_drift_price > config.max_entry_drift_price:
-        msg = (
-            f"Entry drift too large: {entry_drift_price:.2f} > {config.max_entry_drift_price:.2f}. "
-            "Trade blocked."
-        )
-        trade_log.add({
-            "status": log_prefix,
-            "reason": msg,
-            "direction": direction,
-            "symbol": symbol,
-            "lot_size": lot_size,
-            "signal_entry": entry_price,
-            "live_price": price,
-        })
-        return {"success": False, "message": msg}
+        logger.info(f"SMART EXECUTION: Entry drift too large ({entry_drift_price:.2f} > {config.max_entry_drift_price:.2f}). Re-anchoring to current price {price:.2f}")
+        # Maintain distances (pips) but from current price
+        sl_dist = abs(entry_price - sl_price)
+        tp_dist = abs(entry_price - tp_price)
+        
+        if direction == "LONG":
+            sl_price = price - sl_dist
+            tp_price = price + tp_dist
+        else:
+            sl_price = price + sl_dist
+            tp_price = price - tp_dist
+        
+        # Update entry_price to the one we are actually using
+        entry_price = price
 
     sl_dist = abs(entry_price - sl_price)
     tp_dist = abs(entry_price - tp_price)
@@ -741,18 +782,17 @@ def _prepare_trade_request(
         tp_dist = max(tp_dist, min_stop + point)
 
     # ── SL/TP distance guardrails ────────────────────────────────
-    pip_size = point * 10  # 1 pip = 10 points (works for XAUUSD, forex 5-digit, JPY 3-digit)
-
+    pip_size = point * 10  # 1 pip = 10 points
+    
+    # SMART SL ADJUSTMENT: If SL is inside spread, push it out to safe minimum
     if sl_dist <= spread_price:
-        msg = (
-            f"SL distance ({sl_dist:.{digits}f}) is inside or equal to the spread "
-            f"({spread_price:.{digits}f}). Trade blocked."
-        )
-        trade_log.add({
-            "status": log_prefix, "reason": msg, "direction": direction,
-            "symbol": symbol, "lot_size": lot_size, "signal_entry": entry_price,
-        })
-        return {"success": False, "message": msg}
+        safe_min_sl = spread_price + (point * 20) # spread + 2 pips
+        logger.info(f"SMART EXECUTION: SL too tight ({sl_dist:.{digits}f}). Adjusting to safe minimum ({safe_min_sl:.{digits}f})")
+        sl_dist = safe_min_sl
+        if direction == "LONG":
+            sl_price = entry_price - sl_dist
+        else:
+            sl_price = entry_price + sl_dist
 
     sl_pips = sl_dist / pip_size if pip_size > 0 else 0.0
     tp_pips = tp_dist / pip_size if pip_size > 0 else 0.0

@@ -18,7 +18,7 @@ import pandas as pd
 
 from alerting import load_alert_config, send_webhook_alert
 from data_fetcher import fetch_ohlcv
-from mt5_trader import MT5Config, connect_mt5, execute_trade, load_credentials, is_mt5_alive, ensure_mt5_connected
+from mt5_trader import MT5Config, connect_mt5, execute_trade, load_credentials, is_mt5_alive, ensure_mt5_connected, build_mt5_config_from_credentials
 from trade_generator import generate_signals
 
 BASE_DIR = Path(__file__).parent
@@ -171,21 +171,6 @@ def signal_quality_score(sig: pd.Series, tf: str, reference_ts: pd.Timestamp) ->
     return round(max(0.0, min(score, 100.0)), 1)
 
 
-def build_mt5_config_from_credentials(creds: dict) -> MT5Config:
-    return MT5Config(
-        login=int(creds["login"]),
-        password=creds["password"],
-        server=creds["server"],
-        symbol=creds.get("symbol", "XAUUSD"),
-        max_lot=float(creds.get("max_lot", 0.10)),
-        max_spread_price=float(creds.get("max_spread_price", 0.60)),
-        max_entry_drift_price=float(creds.get("max_entry_drift_price", 2.00)),
-        max_trades_per_day=int(creds.get("max_trades_per_day", 8)),
-        max_open_positions=int(creds.get("max_open_positions", 2)),
-        enforce_session_window=bool(creds.get("enforce_session_window", False)),
-        session_start_utc=int(creds.get("session_start_utc", 0)),
-        session_end_utc=int(creds.get("session_end_utc", 23)),
-    )
 
 
 def main() -> None:

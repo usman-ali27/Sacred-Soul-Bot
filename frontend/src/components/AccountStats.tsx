@@ -10,7 +10,12 @@ export const AccountStats = ({
   calculateVolatility,
   mt5Status,
   autoTrading,
+  maxDailyLossPct = 5,
+  maxTotalDDPct   = 10,
 }: any) => {
+  // Convert pct props to fractions for comparison
+  const dailyLimitFraction = maxDailyLossPct / 100;
+  const totalLimitFraction = maxTotalDDPct / 100;
   return (
     <div
       style={{
@@ -112,7 +117,7 @@ export const AccountStats = ({
               style={{
                 fontSize: 12,
                 fontFamily: "monospace",
-                color: status?.dailyLoss > 0.04 ? "#FF4D4D" : "#888",
+                color: status?.dailyLoss > dailyLimitFraction * 0.8 ? "#FF4D4D" : "#888",
               }}
             >
               {((status?.dailyLoss || 0) * 100).toFixed(2)}%
@@ -130,7 +135,7 @@ export const AccountStats = ({
               style={{
                 height: "100%",
                 background: "#FF4D4D",
-                width: `${((status?.dailyLoss || 0) / 0.045) * 100}%`,
+                width: `${Math.min(100, ((status?.dailyLoss || 0) / dailyLimitFraction) * 100)}%`,
               }}
             ></div>
           </div>
@@ -158,7 +163,7 @@ export const AccountStats = ({
               style={{
                 fontSize: 12,
                 fontFamily: "monospace",
-                color: status?.totalLoss > 0.08 ? "#FF4D4D" : "#888",
+                color: status?.totalLoss > totalLimitFraction * 0.8 ? "#FF4D4D" : "#888",
               }}
             >
               {((status?.totalLoss || 0) * 100).toFixed(2)}%
@@ -176,7 +181,7 @@ export const AccountStats = ({
               style={{
                 height: "100%",
                 background: "#FF4D4D",
-                width: `${((status?.totalLoss || 0) / 0.1) * 100}%`,
+                width: `${Math.min(100, ((status?.totalLoss || 0) / totalLimitFraction) * 100)}%`,
               }}
             ></div>
           </div>

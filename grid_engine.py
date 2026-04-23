@@ -62,6 +62,7 @@ class GridLevel:
     closed_at: str = ""
     sl_price: float = 0.0
     tp_price: float = 0.0
+    peak_price: float = 0.0
 
 
 @dataclass
@@ -89,6 +90,8 @@ class GridConfig:
     spacing_multiplier: float = 1.0   # spacing = ATR * multiplier
     tp_multiplier: float = 1.5        # TP = spacing * tp_multiplier
     sl_multiplier: float = 2.5        # SL = spacing * sl_multiplier (wide)
+    trailing_sl_enabled: bool = True
+    trailing_sl_step_pips: float = 30.0
     max_open_levels: int = 6          # maximum simultaneous open grid orders
     ai_direction_enabled: bool = True
     ai_spacing_enabled: bool = True   # let brain tune spacing_multiplier
@@ -619,6 +622,39 @@ def deactivate_grid(state: GridState) -> GridState:
     return state
 
 
+    return changed
+    
+
+def reanchor_grid(state: GridState, current_price: float) -> bool:
+    """
+    Re-centers the grid around current_price. 
+    Keeps OPEN levels, clears CLOSED/CANCELLED/PENDING, and generates 
+    fresh PENDING levels to fill the grid back to config specs.
+    """
+    if not state.active:
+        return False
+        
+    # 1. Keep only OPEN levels and ensure their IDs are unique (append ticket)
+    open_levels = []
+    for lv in state.levels:
+        if lv.status == "OPEN":
+            # If the ID is just "BUY_1", make it "BUY_1 (T:12345)"
+            if lv.ticket and "(T:" not in lv.level_id:
+                lv.level_id = f"{lv.level_id} (T:{lv.ticket})"
+            open_levels.append(lv)
+    
+    # 2. Generate a fresh grid based on current price and regime
+    fresh_levels = build_grid_levels(current_price, state.regime, state.config)
+    
+    # 3. Merge
+    state.levels = open_levels + fresh_levels
+    state.levels.sort(key=lambda lv: lv.price)
+    state.anchor_price = current_price
+    state.updated_at = _now()
+    
+    return True
+
+
 # ───────────────────────────────────────────────────────────────────────────
 # Grid level monitoring / update
 # ───────────────────────────────────────────────────────────────────────────
@@ -649,8 +685,14 @@ def check_levels_hit(
     for lv in state.levels:
         if lv.status != "PENDING":
             continue
-        if abs(current_price - lv.price) <= tolerance:
-            triggered.append(lv)
+            
+        # Crossover logic: Trigger if price has reached or passed the level
+        if lv.direction == "BUY":
+            if current_price <= lv.price + tolerance:
+                triggered.append(lv)
+        elif lv.direction == "SELL":
+            if current_price >= lv.price - tolerance:
+                triggered.append(lv)
 
     return triggered
 
@@ -663,6 +705,7 @@ def mark_level_open(state: GridState, level_id: str,
             lv.status = "OPEN"
             lv.ticket = ticket
             lv.entry_price = entry_price
+            lv.peak_price = entry_price
             lv.opened_at = _now()
             break
 
