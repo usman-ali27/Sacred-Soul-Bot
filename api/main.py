@@ -1,9 +1,14 @@
-from fastapi import FastAPI, HTTPException
+import uvicorn
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+import logging
 
+from api.endpoints import router as api_router
 
-from endpoints import router as api_router
-app = FastAPI()
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
+
+app = FastAPI(title="Sacred Soul Bot API")
 
 app.add_middleware(
     CORSMiddleware,
@@ -15,8 +20,9 @@ app.add_middleware(
 
 app.include_router(api_router, prefix="/api")
 
-@app.get("/api/status")
-def get_status():
-    return {"status": "ICT_BOT API running"}
+@app.get("/")
+def root():
+    return {"message": "Sacred Soul Bot API is online", "docs": "/docs"}
 
-# TODO: Add endpoints for MT5 connect, bot control, config, etc.
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)

@@ -39,3 +39,7 @@ export async function backtestRun() {
   const res = await api.get("/backtest/run");
   return res.data;
 }
+export async function getNews() {
+  const res = await api.get("/news");
+  return res.data;
+}
